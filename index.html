@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Game of Beauties</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Иконки Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ——— ОБЩИЕ СТИЛИ ——— */
+        body {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        /* Широкий адаптивный контейнер (как у принцесс и футболистов) */
+        .container-custom {
+            width: 95%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* ——— КАРТОЧКИ ——— */
+        .card {
+            border: none;
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 20px 40px -12px rgba(120, 80, 150, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .card-header,
+        .card-footer {
+            background: transparent;
+            border: none;
+        }
+
+        /* ——— ХЕДЕР ——— */
+        .princess-header {
+            background: linear-gradient(145deg, #f8e8ff, #fce4ec);
+            border-radius: 32px 32px 0 0 !important;
+            padding: 1.8rem 1rem 1.2rem;
+            border-bottom: 2px solid rgba(255, 215, 245, 0.5);
+        }
+
+        .princess-header h3 {
+            color: #4a2c5e;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(255, 215, 245, 0.6);
+        }
+
+        .princess-header h3 small {
+            font-weight: 300;
+            color: #7b5a8c;
+            font-size: 1.1rem;
+        }
+
+        /* ———— НАВИГАЦИЯ (табы) ———— */
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 40px;
+            padding: 0.55rem 1.2rem;
+            margin: 0.2rem;
+            color: #5a3d6b;
+            font-weight: 500;
+            background: transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background: rgba(255, 215, 245, 0.5);
+            color: #3a1f4a;
+            transform: translateY(-1px);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: #d4b0d9;
+            color: #2d1a3a;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(180, 120, 200, 0.3);
+        }
+
+        /* ——— КНОПКИ-ЯКОРЯ ——— */
+        .btn-outline-primary {
+            border-color: #c9a8d4;
+            color: #4f2f60;
+            border-radius: 40px;
+            padding: 0.45rem 1.8rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-primary:hover,
+        .btn-outline-primary.active {
+            background: #d4b0d9;
+            border-color: #b58bc4;
+            color: #2d1a3a;
+            box-shadow: 0 4px 12px rgba(180, 120, 200, 0.25);
+        }
+
+        .btn-outline-secondary {
+            border-radius: 40px;
+            color: #7b5a8c;
+            border-color: #dcc6e3;
+        }
+
+        .btn-outline-secondary:hover {
+            background: #f0e0f5;
+            border-color: #c9a8d4;
+            color: #3f1f52;
+        }
+
+        /* ——— СЕКЦИИ (блоки правил) ——— */
+        .section-highlight {
+            background: rgba(255, 245, 250, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 1.8rem 2.2rem;
+            border-radius: 28px;
+            border-left: 6px solid #d4b0d9;
+            box-shadow: 0 8px 20px -8px rgba(150, 100, 170, 0.15);
+            transition: all 0.2s;
+        }
+
+        .section-highlight:hover {
+            box-shadow: 0 12px 28px -10px rgba(150, 100, 170, 0.25);
+            background: rgba(255, 248, 252, 0.85);
+        }
+
+        .section-highlight h6 {
+            color: #4a2c5e;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            font-size: 1.15rem;
+        }
+
+        .section-highlight p {
+            color: #4a3455;
+            line-height: 1.6;
+        }
+
+        .section-highlight ul li {
+            padding: 0.35rem 0;
+            color: #3d2a48;
+            font-size: 1.02rem;
+        }
+
+        .section-highlight ul li strong {
+            color: #7b3f8a;
+        }
+
+        /* ——— ИЗОБРАЖЕНИЕ ——— */
+        .img-fluid.rounded {
+            border-radius: 36px !important;
+            box-shadow: 0 16px 32px -10px rgba(120, 70, 140, 0.25);
+            border: 3px solid rgba(255, 215, 245, 0.6);
+        }
+
+        /* ——— ФУТЕР ——— */
+        .card-footer {
+            border-radius: 0 0 32px 32px !important;
+            background: rgba(255, 245, 250, 0.5);
+            backdrop-filter: blur(4px);
+            color: #5a3d6b;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        /* ——— ИКОНКИ ——— */
+        .fa-star {
+            color: #b18ac9;
+            text-shadow: 0 0 8px rgba(177, 138, 201, 0.4);
+        }
+
+        /* Делаем корону фиолетовой в тон общему дизайну */
+        .fa-crown {
+            color: #b58bc4;
+        }
+
+        .fa-gem {
+            color: #b18ac9;
+        }
+
+        .text-center.mt-5 strong {
+            color: #4a2c5e;
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .nav-tabs .nav-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .section-highlight {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-custom">
+        <!-- ===== ХЕДЕР ===== -->
+        <header class="card card-header princess-header mb-3">
+            <div class="card-body text-center py-2">
+                <h3 class="card-title mb-0">
+                    <i class="fas fa-crown me-2"></i>Game of Beauties
+                    <br><small><i class="fas fa-sparkles me-1"></i>Study well and create your own perfect world!</small>
+                </h3>
+            </div>
+        </header>
+
+        <!-- ===== ОСНОВНАЯ КАРТОЧКА ===== -->
+        <div class="card mb-4">
+
+            <!-- Табы -->
+            <div class="card-body pb-0">
+                <ul class="nav nav-tabs justify-content-center flex-wrap">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">
+                            <i class="fas fa-scroll me-1" style="color:#b58bc4;"></i>Rules & Rate
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./princesses.html">
+                            <i class="fas fa-crown me-1" style="color:#b58bc4;"></i>Princesses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./princes.html">
+                            <i class="fas fa-chess-king me-1" style="color:#b58bc4;"></i>Princes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./castles.html">
+                            <i class="fas fa-landmark me-1" style="color:#b58bc4;"></i>Castles
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pets.html">
+                            <i class="fas fa-paw me-1" style="color:#b58bc4;"></i>Pets
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Vera.html">
+                            <i class="fas fa-star me-1" style="color:#b58bc4;"></i>Vera's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Zlata.html">
+                            <i class="fas fa-gem me-1" style="color:#b58bc4;"></i>Zlata's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Vika.html">
+                            <i class="fas fa-heart me-1" style="color:#b58bc4;"></i>Vika's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./wheel.html">
+                            <i class="fas fa-circle-notch me-1" style="color:#b58bc4;"></i>Fortune Wheel
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Контент -->
+            <div class="card-body px-4 py-3">
+
+                <!-- Навигация внутри страницы -->
+                <div class="d-flex justify-content-center mb-4">
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-outline-primary" href="#section_1">
+                            <i class="fas fa-book-open me-1"></i>The Rules
+                        </a>
+                        <a class="btn btn-outline-primary" href="#section_2">
+                            <i class="fas fa-coins me-1"></i>Exchange Rate
+                        </a>
+                    </div>
+                </div>
+
+                <h5 class='card-title text-center mb-4' id='top_of_page'>
+                    <i class="fas fa-gem me-2" style="color:#b58bc4;"></i>
+                    The Rules and Exchange Rate
+                    <i class="fas fa-gem ms-2" style="color:#b58bc4;"></i>
+                </h5>
+
+                <!-- Раздел 1 -->
+                <div class="section-highlight mb-4" id="section_1">
+                    <h6 class="card-subtitle mb-3"><i class="fas fa-feather-alt me-2" style="color:#b58bc4;"></i>The Rules</h6>
+                    <p class="card-text">Добро пожаловать в нашу игру с прекрасным для прекрасных красавиц, где ты
+                        можешь создать свой необычный мир.
+                        Этим миром будет твоя собственная коллекция персонажей, их питомцев и жилищ.</p>
+
+                    <p class="card-text">Конечно же, для того чтобы собрать эту коллекцию, тебе понадобится золото или, проще говоря,
+                        money. Где же это добыть?</p>
+
+                    <p class="card-text">Всё просто — нужно всего лишь хорошо учиться. Все пятёрки, полученные на уроке, ты сможешь потом
+                        потратить на покупку любимых персонажей.</p>
+                    <div class="text-center mt-3">
+                        <a class="btn btn-sm btn-outline-secondary" href="#top_of_page">
+                            <i class="fas fa-arrow-up me-1"></i>Go back to the Beginning
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Раздел 2 -->
+                <div class="section-highlight" id="section_2">
+                    <h6 class="card-subtitle mb-3"><i class="fas fa-exchange-alt me-2" style="color:#b58bc4;"></i>Exchange Rate</h6>
+                    <p class="card-text">НО. Пятёрки нужно менять на звёзды, за которые, собственно, здесь
+                        осуществляются покупки. Вот обменный курс:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-star fa-fw me-2" style="color:#f5c542;"></i> <strong>10 fives = 1 star ⭐</strong></li>
+                        <li><i class="fas fa-star fa-fw me-2" style="color:#f5c542;"></i> <strong>50 fives = 5 stars ⭐</strong></li>
+                        <li><i class="fas fa-star fa-fw me-2" style="color:#f5c542;"></i> <strong>100 fives = 10 stars ⭐</strong></li>
+                        <li><i class="fas fa-star fa-fw me-2" style="color:#f5c542;"></i> <strong>500 fives = 50 stars ⭐</strong></li>
+                        <li><i class="fas fa-star fa-fw me-2" style="color:#f5c542;"></i> <strong>1000 fives = 100 stars ⭐</strong> and so on.</li>
+                    </ul>
+                    <p class="card-text">Распоряжайся звёздами мудро! Кстати, если ты купила кого-то, однако потом
+                        перехотела, то покупку можно вернуть, но уже за меньшую цену. Хорошо подумай, прежде чем кого-то
+                        приобретать. Обрати внимание, что далеко не все персонажи здесь мультяшные. Некоторые - из фильмов и из несуществующих вселенных, созданные самой Королевой :)
+                        Наконец, у нас есть колесо фортуны, которое ты будешь крутить в конце каждого урока. С его
+                        помощью ты сможешь выиграть ещё больше звёздочек (или ничего, если не повезёт))).
+                        Study well, get fives and then stars, buy what and who you wish, spin
+                        the wheel and create your own dream world!</p>
+                    <div class="text-center mt-3">
+                        <a class="btn btn-sm btn-outline-secondary" href="#top_of_page">
+                            <i class="fas fa-arrow-up me-1"></i>Go back to the Beginning
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Изображение -->
+                <div class="text-center mt-5">
+                    <img src="frozen.jpg" class="img-fluid rounded" style="max-height: 320px;" alt="Frozen inspiration">
+                    <div class="mt-3">
+                        <strong>
+                            <i class="fas fa-heart me-2" style="color:#d47b9e;"></i>Good Luck!<i class="fas fa-heart ms-2" style="color:#d47b9e;"></i>
+                        </strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== ФУТЕР ===== -->
+        <footer class="card card-footer">
+            <div class="card-body text-center py-3">
+                <p class="mb-0">
+                    <i class="fas fa-crown me-1" style="color:#b58bc4;"></i>© Game of Beauties<i class="fas fa-crown ms-1" style="color:#b58bc4;"></i>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS + Скрипт подсветки -->
+    <script crossorigin="anonymous" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section-highlight');
+            const navLinks = document.querySelectorAll('.btn-group .btn');
+            window.addEventListener('scroll', function () {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= (sectionTop - 120)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

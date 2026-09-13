@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Wheel — Game of Beauties</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ——— ОБЩИЙ СТИЛЬ ——— */
+        body {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        /* Широкий адаптивный контейнер */
+        .container-custom {
+            width: 95%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* ——— КАРТОЧКИ ——— */
+        .card {
+            border: none;
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 20px 40px -12px rgba(120, 80, 150, 0.25);
+            transition: all 0.2s ease;
+        }
+
+        .card-header,
+        .card-footer {
+            background: transparent;
+            border: none;
+        }
+
+        /* ——— ХЕДЕР ——— */
+        .princess-header {
+            background: linear-gradient(145deg, #f8e8ff, #fce4ec);
+            border-radius: 32px 32px 0 0 !important;
+            padding: 1.8rem 1rem 1.2rem;
+            border-bottom: 2px solid rgba(255, 215, 245, 0.5);
+        }
+
+        .princess-header h3 {
+            color: #4a2c5e;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(255, 215, 245, 0.6);
+        }
+
+        .princess-header h3 small {
+            font-weight: 300;
+            color: #7b5a8c;
+            font-size: 1.1rem;
+        }
+
+        /* Корона в заголовке */
+        .princess-header .fa-crown {
+            color: #4a2c5e;
+        }
+
+        /* ——— НАВИГАЦИЯ (табы) ——— */
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 40px;
+            padding: 0.55rem 1.2rem;
+            margin: 0.2rem;
+            color: #5a3d6b;
+            font-weight: 500;
+            background: transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background: rgba(255, 215, 245, 0.5);
+            color: #3a1f4a;
+            transform: translateY(-1px);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: #d4b0d9;
+            color: #2d1a3a;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(180, 120, 200, 0.3);
+        }
+
+        /* ——— ФУТЕР ——— */
+        .card-footer {
+            border-radius: 0 0 32px 32px !important;
+            background: rgba(255, 245, 250, 0.5);
+            backdrop-filter: blur(4px);
+            color: #5a3d6b;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        /* ——— СТИЛИ ДЛЯ КОЛЕСА ФОРТУНЫ ——— */
+        #fortune-wheel-wrapper {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #fortune-wheel-wrapper * {
+            box-sizing: border-box;
+        }
+
+        #fortune-wheel-container {
+            min-height: auto;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #fortune-wheel-container .fw-main-container {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        #fortune-wheel-container .fw-title {
+            color: #4a2c5e;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 12px rgba(180, 120, 200, 0.3);
+            font-weight: 600;
+        }
+
+        #fortune-wheel-container .fw-subtitle {
+            color: #7b5a8c;
+            margin-bottom: 30px;
+            font-size: 1.15em;
+            font-weight: 400;
+        }
+
+        /* Контейнер колеса */
+        #fortune-wheel-container .fw-wheel-container {
+            position: relative;
+            margin: 50px auto 30px;
+            max-width: 420px;
+        }
+
+        /* Стрелка */
+        #fortune-wheel-container .fw-arrow {
+            width: 0;
+            height: 0;
+            border-left: 22px solid transparent;
+            border-right: 22px solid transparent;
+            border-top: 44px solid #d47b9e;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            filter: drop-shadow(0 4px 12px rgba(180, 120, 200, 0.5));
+        }
+
+        #fortune-wheel-container #wheel {
+            transition: transform 15s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 20px 50px -10px rgba(120, 80, 150, 0.4);
+        }
+
+        /* Кнопка SPIN */
+        #fortune-wheel-container .fw-spin-button {
+            background: linear-gradient(135deg, #d4b0d9 0%, #b58bc4 100%);
+            color: white;
+            border: none;
+            padding: 16px 48px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(180, 120, 200, 0.35);
+            transition: all 0.3s;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        #fortune-wheel-container .fw-spin-button:hover:not(:disabled) {
+            transform: scale(1.05);
+            box-shadow: 0 12px 32px rgba(180, 120, 200, 0.5);
+        }
+
+        #fortune-wheel-container .fw-spin-button:disabled {
+            background: #b8a0c2;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 4px 12px rgba(150, 120, 160, 0.2);
+        }
+
+        /* Результат */
+        #fortune-wheel-container .fw-result {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 24px 30px;
+            border-radius: 28px;
+            margin-top: 25px;
+            box-shadow: 0 12px 36px rgba(120, 80, 150, 0.2);
+            animation: fw-bounce 0.5s;
+            border: 2px solid rgba(212, 176, 217, 0.3);
+        }
+
+        @keyframes fw-bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        #fortune-wheel-container .fw-result h2 {
+            color: #4a2c5e;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        #fortune-wheel-container .fw-result p {
+            color: #b58bc4;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Блоки статистики, управления, истории */
+        #fortune-wheel-container .fw-controls,
+        #fortune-wheel-container .fw-history,
+        #fortune-wheel-container .fw-stats {
+            background: rgba(255, 245, 250, 0.65);
+            backdrop-filter: blur(4px);
+            padding: 24px 28px;
+            border-radius: 28px;
+            margin: 25px auto 0;
+            max-width: 620px;
+            width: 100%;
+            border: 1px solid rgba(212, 176, 217, 0.25);
+            box-shadow: 0 8px 24px rgba(120, 80, 150, 0.08);
+        }
+
+        #fortune-wheel-container .fw-controls h3,
+        #fortune-wheel-container .fw-history h3,
+        #fortune-wheel-container .fw-stats h3 {
+            color: #4a2c5e;
+            margin-bottom: 18px;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        /* Список призов */
+        #fortune-wheel-container .fw-prizes-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            #fortune-wheel-container .fw-prizes-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        #fortune-wheel-container .fw-prize-item {
+            background: rgba(212, 176, 217, 0.2);
+            padding: 10px 16px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(212, 176, 217, 0.15);
+        }
+
+        #fortune-wheel-container .fw-prize-item span {
+            color: #3d2a48;
+            font-weight: 500;
+        }
+
+        #fortune-wheel-container .fw-remove-btn {
+            background: #d47b9e;
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: background 0.2s;
+        }
+
+        #fortune-wheel-container .fw-remove-btn:hover {
+            background: #b85a7a;
+        }
+
+        /* Кнопка добавления */
+        #fortune-wheel-container .fw-add-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #d4b0d9, #b58bc4);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 40px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        #fortune-wheel-container .fw-add-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 16px rgba(180, 120, 200, 0.3);
+        }
+
+        /* История */
+        #fortune-wheel-container .fw-history-list {
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        #fortune-wheel-container .fw-history-item {
+            background: rgba(212, 176, 217, 0.15);
+            padding: 10px 16px;
+            border-radius: 16px;
+            margin-bottom: 8px;
+            color: #3d2a48;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(212, 176, 217, 0.1);
+        }
+
+        #fortune-wheel-container .fw-history-item .fw-time {
+            font-size: 0.8em;
+            color: #7b5a8c;
+        }
+
+        #fortune-wheel-container .fw-clear-history-btn {
+            width: 100%;
+            background: #d47b9e;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: background 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        #fortune-wheel-container .fw-clear-history-btn:hover {
+            background: #b85a7a;
+        }
+
+        /* Статистика */
+        #fortune-wheel-container .fw-stats {
+            color: #3d2a48;
+            text-align: left;
+            padding: 20px 28px;
+        }
+
+        #fortune-wheel-container .fw-stats h3 {
+            text-align: center;
+        }
+
+        #fortune-wheel-container .fw-stats-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(212, 176, 217, 0.2);
+            font-weight: 500;
+        }
+
+        #fortune-wheel-container .fw-stats-item span:last-child {
+            color: #b58bc4;
+            font-weight: 600;
+        }
+
+        /* Лоадер */
+        #fortune-wheel-container .fw-loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 44, 94, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        #fortune-wheel-container .fw-spinner {
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 5px solid #d4b0d9;
+            width: 50px;
+            height: 50px;
+            animation: fw-spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fw-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fw-firework {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(2) rotate(360deg);
+            }
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .nav-tabs .nav-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            #fortune-wheel-container .fw-title {
+                font-size: 2rem;
+            }
+
+            #fortune-wheel-container .fw-spin-button {
+                padding: 14px 32px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-custom">
+        <!-- ===== ХЕДЕР ===== -->
+        <header class="card card-header princess-header mb-3">
+            <div class="card-body text-center py-2">
+                <h3 class="card-title mb-0">
+                    <i class="fas fa-crown me-2"></i>Game of Beauties
+                    <br><small><i class="fas fa-sparkles me-1"></i>Study well and create your own perfect world!</small>
+                </h3>
+            </div>
+        </header>
+
+        <!-- ===== ОСНОВНАЯ КАРТОЧКА ===== -->
+        <div class="card mb-4">
+            <!-- Табы -->
+            <div class="card-body pb-0">
+                <ul class="nav nav-tabs justify-content-center flex-wrap">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">
+                            <i class="fas fa-scroll me-1" style="color:#b58bc4;"></i>Rules & Rate
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./princesses.html">
+                            <i class="fas fa-crown me-1" style="color:#b58bc4;"></i>Princesses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./princes.html">
+                            <i class="fas fa-chess-king me-1" style="color:#b58bc4;"></i>Princes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./castles.html">
+                            <i class="fas fa-landmark me-1" style="color:#b58bc4;"></i>Castles
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pets.html">
+                            <i class="fas fa-paw me-1" style="color:#b58bc4;"></i>Pets
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Vera.html">
+                            <i class="fas fa-star me-1" style="color:#b58bc4;"></i>Vera's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Zlata.html">
+                            <i class="fas fa-gem me-1" style="color:#b58bc4;"></i>Zlata's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Vika.html">
+                            <i class="fas fa-heart me-1" style="color:#b58bc4;"></i>Vika's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./wheel.html">
+                            <i class="fas fa-circle-notch me-1" style="color:#b58bc4;"></i>Fortune Wheel
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ===== КОНТЕНТ С КОЛЕСОМ ===== -->
+            <div class="card-body px-4 py-3">
+                <div id="fortune-wheel-wrapper">
+                    <div id="fortune-wheel-container">
+                        <div class="fw-loading" id="loading">
+                            <div class="fw-spinner"></div>
+                            <p><i class="fas fa-spinner fa-spin me-2"></i>Loading...</p>
+                        </div>
+
+                        <div class="fw-main-container">
+                            <h1 class="fw-title">
+                                <i class="fas fa-gem me-2" style="color:#b58bc4;"></i>The Wheel of Fortune
+                                <i class="fas fa-gem ms-2" style="color:#b58bc4;"></i>
+                            </h1>
+                            <p class="fw-subtitle">
+                                <i class="fas fa-star me-1" style="color:#d47b9e;"></i> Earn more prizes or nothing!
+                                <i class="fas fa-star ms-1" style="color:#d47b9e;"></i>
+                            </p>
+
+                            <div class="fw-wheel-container">
+                                <div class="fw-arrow"></div>
+                                <svg id="wheel" width="400" height="400" viewBox="0 0 400 400"></svg>
+                            </div>
+
+                            <button class="fw-spin-button" id="spinBtn">
+                                <i class="fas fa-sync-alt me-2"></i>SPIN!
+                            </button>
+
+                            <div id="result" class="fw-result" style="display: none;"></div>
+
+                            <!-- Статистика -->
+                            <div class="fw-stats">
+                                <h3><i class="fas fa-chart-bar me-2"></i>Statistics</h3>
+                                <div class="fw-stats-item">
+                                    <span><i class="fas fa-sync-alt me-2"></i>Total spins:</span>
+                                    <span id="totalSpins">0</span>
+                                </div>
+                                <div class="fw-stats-item">
+                                    <span><i class="fas fa-trophy me-2"></i>Successful spins:</span>
+                                    <span id="successfulSpins">0</span>
+                                </div>
+                                <div class="fw-stats-item">
+                                    <span><i class="fas fa-heart me-2"></i>Luck percentage:</span>
+                                    <span id="luckPercentage">0%</span>
+                                </div>
+                            </div>
+
+                            <!-- Управление призами -->
+                            <div class="fw-controls">
+                                <h3><i class="fas fa-gift me-2"></i>Prize Management</h3>
+                                <div class="fw-prizes-list" id="prizesList"></div>
+                                <button class="fw-add-btn" id="addBtn">
+                                    <i class="fas fa-plus me-2"></i>Add Prize
+                                </button>
+                            </div>
+
+                            <!-- История -->
+                            <div class="fw-history">
+                                <h3><i class="fas fa-history me-2"></i>Spin History</h3>
+                                <div class="fw-history-list" id="historyList"></div>
+                                <button class="fw-clear-history-btn" id="clearHistoryBtn">
+                                    <i class="fas fa-trash-alt me-2"></i>Clear History
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== ФУТЕР ===== -->
+        <footer class="card card-footer">
+            <div class="card-body text-center py-3">
+                <p class="mb-0">
+                    <i class="fas fa-crown me-1" style="color:#b58bc4;"></i> © Game of Beauties
+                    <i class="fas fa-crown ms-1" style="color:#b58bc4;"></i>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- СКРИПТ КОЛЕСА -->
+    <!-- ============================================================ -->
+    <script>
+        let prizes = [
+            '⭐ 1 star', '⭐ 2 stars', '⭐ 3 stars', '⭐ 4 stars',
+            '⭐ 5 stars', '⭐ 10 stars', '⭐ 20 stars',
+            '❌ Miss', '🔄 Restart'
+        ];
+
+        const colors = ['#FFD700', '#FFA500', '#FF8C00', '#FF6347',
+            '#FF4500', '#DC143C', '#4169E1', '#808080', '#32CD32'
+        ];
+
+        let rotation = 0;
+        let spinning = false;
+        let spinHistory = [];
+        let totalSpins = 0;
+        let successfulSpins = 0;
+
+        let customSounds = {
+            twenty: 'twenty.mp3',
+            sad: 'empty.mp3',
+            drum: 'star.mp3',
+            spin: 'spin.mp3'
+        };
+
+        function loadFromStorage() {
+            const PRIZE_VERSION = 'v2_english';
+            const savedVersion = localStorage.getItem('wheelPrizeVersion');
+
+            if (savedVersion !== PRIZE_VERSION) {
+                localStorage.removeItem('wheelPrizes');
+                localStorage.setItem('wheelPrizeVersion', PRIZE_VERSION);
+            }
+
+            const savedPrizes = localStorage.getItem('wheelPrizes');
+            const savedHistory = localStorage.getItem('wheelHistory');
+            const savedStats = localStorage.getItem('wheelStats');
+            if (savedPrizes) prizes = JSON.parse(savedPrizes);
+            if (savedHistory) spinHistory = JSON.parse(savedHistory);
+            if (savedStats) {
+                const stats = JSON.parse(savedStats);
+                totalSpins = stats.totalSpins || 0;
+                successfulSpins = stats.successfulSpins || 0;
+            }
+            updateStatsDisplay();
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('wheelPrizes', JSON.stringify(prizes));
+            localStorage.setItem('wheelHistory', JSON.stringify(spinHistory));
+            localStorage.setItem('wheelStats', JSON.stringify({ totalSpins, successfulSpins }));
+        }
+
+        function updateStatsDisplay() {
+            document.getElementById('totalSpins').textContent = totalSpins;
+            document.getElementById('successfulSpins').textContent = successfulSpins;
+            const luckPercentage = totalSpins > 0 ? Math.round((successfulSpins / totalSpins) * 100) : 0;
+            document.getElementById('luckPercentage').textContent = `${luckPercentage}%`;
+        }
+
+        function showLoading() { document.getElementById('loading').style.display = 'flex'; }
+
+        function hideLoading() { document.getElementById('loading').style.display = 'none'; }
+
+        function drawWheel() {
+            const wheel = document.getElementById('wheel');
+            wheel.innerHTML = '';
+            const ns = 'http://www.w3.org/2000/svg';
+
+            const circle = document.createElementNS(ns, 'circle');
+            circle.setAttribute('cx', '200');
+            circle.setAttribute('cy', '200');
+            circle.setAttribute('r', '190');
+            circle.setAttribute('fill', '#1a1a2e');
+            circle.setAttribute('stroke', '#fff');
+            circle.setAttribute('stroke-width', '4');
+            wheel.appendChild(circle);
+
+            prizes.forEach((prize, index) => {
+                const angle = (360 / prizes.length) * index;
+                const nextAngle = (360 / prizes.length) * (index + 1);
+                const startAngle = (angle - 90) * (Math.PI / 180);
+                const endAngle = (nextAngle - 90) * (Math.PI / 180);
+                const x1 = 200 + 190 * Math.cos(startAngle);
+                const y1 = 200 + 190 * Math.sin(startAngle);
+                const x2 = 200 + 190 * Math.cos(endAngle);
+                const y2 = 200 + 190 * Math.sin(endAngle);
+                const largeArc = (nextAngle - angle) > 180 ? 1 : 0;
+
+                const path = document.createElementNS(ns, 'path');
+                path.setAttribute('d', `M 200 200 L ${x1} ${y1} A 190 190 0 ${largeArc} 1 ${x2} ${y2} Z`);
+                path.setAttribute('fill', colors[index % colors.length]);
+                path.setAttribute('stroke', '#fff');
+                path.setAttribute('stroke-width', '2');
+                wheel.appendChild(path);
+
+                const textAngle = angle + (360 / prizes.length) / 2;
+                const textRadius = 130;
+                const textX = 200 + textRadius * Math.cos((textAngle - 90) * Math.PI / 180);
+                const textY = 200 + textRadius * Math.sin((textAngle - 90) * Math.PI / 180);
+
+                const text = document.createElementNS(ns, 'text');
+                text.setAttribute('x', textX);
+                text.setAttribute('y', textY);
+                text.setAttribute('fill', 'white');
+                text.setAttribute('font-size', prizes.length > 8 ? '12' : '16');
+                text.setAttribute('font-weight', 'bold');
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('dominant-baseline', 'middle');
+                text.setAttribute('transform', `rotate(${textAngle + 90}, ${textX}, ${textY})`);
+                text.textContent = prize;
+                wheel.appendChild(text);
+            });
+
+            const centerCircle1 = document.createElementNS(ns, 'circle');
+            centerCircle1.setAttribute('cx', '200');
+            centerCircle1.setAttribute('cy', '200');
+            centerCircle1.setAttribute('r', '20');
+            centerCircle1.setAttribute('fill', '#fff');
+            wheel.appendChild(centerCircle1);
+
+            const centerCircle2 = document.createElementNS(ns, 'circle');
+            centerCircle2.setAttribute('cx', '200');
+            centerCircle2.setAttribute('cy', '200');
+            centerCircle2.setAttribute('r', '10');
+            centerCircle2.setAttribute('fill', '#1a1a2e');
+            wheel.appendChild(centerCircle2);
+        }
+
+        function updatePrizesList() {
+            const list = document.getElementById('prizesList');
+            list.innerHTML = '';
+            prizes.forEach((prize, index) => {
+                const item = document.createElement('div');
+                item.className = 'fw-prize-item';
+                const span = document.createElement('span');
+                span.textContent = prize;
+                const btn = document.createElement('button');
+                btn.className = 'fw-remove-btn';
+                btn.textContent = '✕';
+                btn.onclick = () => removePrize(index);
+                item.appendChild(span);
+                item.appendChild(btn);
+                list.appendChild(item);
+            });
+        }
+
+        function spinWheel() {
+            if (spinning) return;
+            spinning = true;
+            totalSpins++;
+            updateStatsDisplay();
+            document.getElementById('spinBtn').disabled = true;
+            document.getElementById('result').style.display = 'none';
+
+            try {
+                const audio = new Audio(customSounds.spin);
+                audio.volume = 0.9;
+                audio.play();
+            } catch (e) { }
+
+            const spins = 15 + Math.random() * 10;
+            const degrees = spins * 360;
+            const extraDegrees = Math.random() * 360;
+            const totalRotation = rotation + degrees + extraDegrees;
+            rotation = totalRotation;
+            document.getElementById('wheel').style.transform = `rotate(${totalRotation}deg)`;
+
+            setTimeout(() => {
+                const normalizedRotation = totalRotation % 360;
+                const segmentAngle = 360 / prizes.length;
+                const adjustedRotation = (360 - normalizedRotation) % 360;
+                const selectedIndex = Math.floor(adjustedRotation / segmentAngle) % prizes.length;
+                const resultDiv = document.getElementById('result');
+                const selectedPrize = prizes[selectedIndex];
+
+                if (!selectedPrize.includes('Restart')) {
+                    addToHistory(selectedPrize);
+                    if (!selectedPrize.includes('Miss')) {
+                        successfulSpins++;
+                        updateStatsDisplay();
+                    }
+                }
+
+                if (selectedPrize.includes('Restart')) {
+                    resultDiv.innerHTML = `<h2 style="color: #32CD32;">🔄 Restart!</h2><p style="color: #32CD32;">Spinning again!</p>`;
+                    resultDiv.style.display = 'block';
+                    setTimeout(() => {
+                        resultDiv.style.display = 'none';
+                        spinWheel();
+                    }, 2000);
+                } else if (selectedPrize.includes('Miss')) {
+                    try {
+                        const audio = new Audio(customSounds.sad);
+                        audio.volume = 0.5;
+                        audio.play();
+                    } catch (e) { }
+                    resultDiv.innerHTML = `<h2 style="color: #808080;">😢 Miss!</h2><p style="color: #808080; font-size: 3em;">😞</p><p style="color: #808080;">Try again!</p>`;
+                    resultDiv.style.display = 'block';
+                    spinning = false;
+                    document.getElementById('spinBtn').disabled = false;
+                } else {
+                    // Проверяем, выпало ли 20 звёзд — тогда особый звук!
+                    if (selectedPrize.includes('20 stars')) {
+                        try {
+                            const audio = new Audio(customSounds.twenty);
+                            audio.volume = 0.1;
+                            audio.play();
+                        } catch (e) { }
+                        createFireworks();
+                    } else {
+                        // Для всех остальных призов — обычный звук
+                        try {
+                            const audio = new Audio(customSounds.drum);
+                            audio.volume = 0.5;
+                            audio.play();
+                        } catch (e) { }
+                        // Для 10 звёзд — просто фейерверк, но звук обычный
+                        if (selectedPrize.includes('10 stars')) {
+                            createFireworks();
+                        }
+                    }
+                    resultDiv.innerHTML = `<h2><i class="fas fa-gem me-2"></i>Result:</h2><p>${selectedPrize}</p>`;
+                    resultDiv.style.display = 'block';
+                    spinning = false;
+                    document.getElementById('spinBtn').disabled = false;
+                }
+                saveToStorage();
+            }, 15000);
+        }
+
+        function addPrize() {
+            const newPrize = prompt('Enter prize name:');
+            if (newPrize && newPrize.trim()) {
+                prizes.push(newPrize.trim());
+                drawWheel();
+                updatePrizesList();
+                saveToStorage();
+            }
+        }
+
+        function removePrize(index) {
+            if (prizes.length > 2) {
+                prizes.splice(index, 1);
+                drawWheel();
+                updatePrizesList();
+                saveToStorage();
+            } else {
+                alert('There must be at least 2 prizes!');
+            }
+        }
+
+        function createFireworks() {
+            const container = document.createElement('div');
+            container.style.cssText =
+                'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999';
+            document.body.appendChild(container);
+
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.innerHTML = '🎆';
+                    firework.style.cssText =
+                        `position:absolute;font-size:${Math.random() * 30 + 20}px;left:${Math.random() * 100}%;top:${Math.random() * 100}%;animation:fw-firework 1s ease-out forwards`;
+                    container.appendChild(firework);
+                    setTimeout(() => firework.remove(), 1000);
+                }, i * 50);
+            }
+            setTimeout(() => container.remove(), 3000);
+        }
+
+        function addToHistory(prize) {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('ru-RU');
+            spinHistory.unshift({ prize: prize, time: timeString });
+            if (spinHistory.length > 20) {
+                spinHistory.pop();
+            }
+            updateHistoryDisplay();
+        }
+
+        function updateHistoryDisplay() {
+            const historyList = document.getElementById('historyList');
+            if (spinHistory.length === 0) {
+                historyList.innerHTML =
+                    '<p style="color: #7b5a8c; text-align: center; font-style: italic;">History is empty</p>';
+                return;
+            }
+            historyList.innerHTML = spinHistory.map(item => `
+                <div class="fw-history-item">
+                    <span>${item.prize}</span>
+                    <span class="fw-time">${item.time}</span>
+                </div>
+            `).join('');
+        }
+
+        function clearHistory() {
+            if (confirm('Clear all spin history?')) {
+                spinHistory = [];
+                updateHistoryDisplay();
+                saveToStorage();
+            }
+        }
+
+        // ===== ИНИЦИАЛИЗАЦИЯ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            loadFromStorage();
+            document.getElementById('spinBtn').addEventListener('click', spinWheel);
+            document.getElementById('addBtn').addEventListener('click', addPrize);
+            document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
+            drawWheel();
+            updatePrizesList();
+            updateHistoryDisplay();
+        });
+    </script>
+</body>
+
+</html>

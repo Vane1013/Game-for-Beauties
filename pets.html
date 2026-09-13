@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Pets — Game of Beauties</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ——— ОБЩИЙ СТИЛЬ (как на других страницах) ——— */
+        body {
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            padding: 0 30px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 32px;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 20px 40px -12px rgba(120, 80, 150, 0.25);
+        }
+
+        .card-header,
+        .card-footer {
+            background: transparent;
+            border: none;
+        }
+
+        .princess-header {
+            background: linear-gradient(145deg, #f8e8ff, #fce4ec);
+            border-radius: 32px 32px 0 0 !important;
+            padding: 1.8rem 1rem 1.2rem;
+            border-bottom: 2px solid rgba(255, 215, 245, 0.5);
+        }
+
+        .princess-header h3 {
+            color: #4a2c5e;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(255, 215, 245, 0.6);
+        }
+
+        .princess-header h3 small {
+            font-weight: 300;
+            color: #7b5a8c;
+            font-size: 1.1rem;
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 40px;
+            padding: 0.6rem 1.6rem;
+            margin: 0 0.2rem;
+            color: #5a3d6b;
+            font-weight: 500;
+            background: transparent;
+            transition: all 0.2s;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background: rgba(255, 215, 245, 0.5);
+            color: #3a1f4a;
+            transform: translateY(-1px);
+        }
+
+        .nav-tabs .nav-link.active {
+            background: #d4b0d9;
+            color: #2d1a3a;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(180, 120, 200, 0.3);
+        }
+
+        .card-footer {
+            border-radius: 0 0 32px 32px !important;
+            background: rgba(255, 245, 250, 0.5);
+            backdrop-filter: blur(4px);
+            color: #5a3d6b;
+            font-weight: 300;
+        }
+
+        .princess-welcome {
+            background: linear-gradient(135deg, rgba(212, 176, 217, 0.3), rgba(180, 139, 196, 0.2));
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 24px 30px;
+            margin: 0 0 30px 0;
+            border: 2px solid rgba(212, 176, 217, 0.3);
+            box-shadow: 0 8px 20px -8px rgba(150, 100, 170, 0.15);
+        }
+
+        .princess-welcome h4 {
+            color: #4a2c5e;
+            font-weight: 600;
+        }
+
+        .princess-welcome p {
+            color: #5a3d6b;
+        }
+
+        /* ——— КАРТОЧКИ ——— */
+        .princess-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
+            border-radius: 24px;
+            padding: 18px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 176, 217, 0.2);
+            box-shadow: 0 8px 24px -10px rgba(150, 100, 170, 0.15);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .princess-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 36px -12px rgba(150, 100, 170, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .princess-card .card-img-container {
+            width: 100%;
+            padding-top: 90%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            background: rgba(212, 176, 217, 0.08);
+            margin-bottom: 12px;
+        }
+
+        .princess-card .card-img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 2px solid rgba(212, 176, 217, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .princess-card:hover .card-img-container img {
+            transform: scale(1.04);
+        }
+
+        .princess-card .card-title {
+            color: #4a2c5e;
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+        }
+
+        .princess-card .player-info small {
+            font-size: 0.78rem;
+            color: #7b5a8c !important;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 2px 0;
+        }
+
+        .princess-card .player-info small i {
+            width: 16px;
+            color: #b58bc4;
+        }
+
+        .princess-card .card-text {
+            color: #5a3d6b;
+            font-size: 0.82rem;
+            line-height: 1.45;
+            flex-grow: 1;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .princess-card .price-section {
+            margin: 6px 0 12px;
+            padding: 6px 14px;
+            background: rgba(212, 176, 217, 0.12);
+            border-radius: 30px;
+        }
+
+        .princess-card .badge-star {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #4a2c5e;
+        }
+
+        .princess-card .badge-star i {
+            color: #f5c542;
+            margin-right: 6px;
+        }
+
+        .princess-card .btn-buy {
+            background: linear-gradient(135deg, #d4b0d9, #b58bc4);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 10px 18px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            letter-spacing: 0.3px;
+        }
+
+        .princess-card .btn-buy:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(180, 120, 200, 0.4);
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+
+            .nav-tabs .nav-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .princess-card .card-img-container {
+                padding-top: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- ===== ХЕДЕР ===== -->
+        <header class="card card-header princess-header">
+            <div class="card-body text-center">
+                <h3 class="card-title">
+                    <i class="fas fa-crown me-2"></i>Game of Beauties
+                    <br><small><i class="fas fa-sparkles me-1"></i>Study well and create your own perfect world!</small>
+                </h3>
+            </div>
+        </header>
+
+        <!-- ===== ОСНОВНАЯ КАРТОЧКА ===== -->
+        <div class="card">
+
+            <!-- Табы -->
+            <div class="card-body pb-0">
+                <ul class="nav nav-tabs justify-content-center flex-wrap">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">
+                            <i class="fas fa-scroll me-1" style="color:#b58bc4;"></i>Rules & Rate
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./princesses.html">
+                            <i class="fas fa-crown me-1" style="color:#b58bc4;"></i>Princesses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./princes.html">
+                            <i class="fas fa-chess-king me-1" style="color:#b58bc4;"></i>Princes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./castles.html">
+                            <i class="fas fa-landmark me-1" style="color:#b58bc4;"></i>Castles
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./pets.html">
+                            <i class="fas fa-paw me-1" style="color:#b58bc4;"></i>Pets
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Vera.html">
+                            <i class="fas fa-star me-1" style="color:#b58bc4;"></i>Vera's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Zlata.html">
+                            <i class="fas fa-gem me-1" style="color:#b58bc4;"></i>Zlata's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Vika.html">
+                            <i class="fas fa-heart me-1" style="color:#b58bc4;"></i>Vika's World
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./wheel.html">
+                            <i class="fas fa-circle-notch me-1" style="color:#b58bc4;"></i>Fortune Wheel
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ===== КОНТЕНТ ===== -->
+            <div class="card-body">
+
+                <div class="princess-welcome text-center">
+                    <h4><i class="fas fa-paw me-2"></i>Loyal Companions</h4>
+                    <p class="mb-0">Every Princess and Prince deserves a faithful friend 🐾</p>
+                </div>
+
+                <h5 class="card-title text-center mb-4">
+                    <i class="fas fa-gem me-2" style="color:#b58bc4;"></i>
+                    Choose your Pet
+                    <i class="fas fa-gem ms-2" style="color:#b58bc4;"></i>
+                </h5>
+
+                <div class="row justify-content-center" id="node_for_insert">
+                    <!-- Карточки вставляются здесь -->
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ===== ФУТЕР ===== -->
+        <footer class="card card-footer mt-3">
+            <div class="card-body text-center">
+                <p class="mb-0">
+                    <i class="fas fa-crown me-1" style="color:#b58bc4;"></i>
+                    © Game of Beauties
+                    <i class="fas fa-crown ms-1" style="color:#b58bc4;"></i>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script crossorigin="anonymous" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
+        </script>
+    <script src="pets.js"></script>
+
+</body>
+
+</html>

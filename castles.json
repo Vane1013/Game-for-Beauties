@@ -1,0 +1,209 @@
+[
+    {
+        "id": "1",
+        "title": "Air Castle",
+        "vendor_code": "301",
+        "description": "A dreamy castle floating among the clouds, where wishes come true.",
+        "universe": "Fantasy",
+        "type": "Air",
+        "img": "photos3/Air.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Big Castle",
+        "vendor_code": "302",
+        "description": "A grand and majestic castle with endless halls and towering spires.",
+        "universe": "Fantasy",
+        "type": "Big",
+        "img": "photos3/Big.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Black Pearl",
+        "vendor_code": "303",
+        "description": "A legendary pirate ship-castle sailing through stormy seas.",
+        "universe": "Pirates of the Caribbean",
+        "type": "Ship",
+        "img": "photos3/Blackpearl.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Bran Castle",
+        "vendor_code": "304",
+        "description": "A mysterious Transylvanian castle shrouded in legends.",
+        "universe": "Dracula",
+        "type": "Gothic",
+        "img": "photos3/Bran.jpg"
+    },
+    {
+        "id": "5",
+        "title": "Bright Castle",
+        "vendor_code": "305",
+        "description": "A luminous castle glowing with warm golden light.",
+        "universe": "Fantasy",
+        "type": "Bright",
+        "img": "photos3/Bright.jpg"
+    },
+    {
+        "id": "6",
+        "title": "Dark Castle",
+        "vendor_code": "306",
+        "description": "A shadowy fortress hiding ancient secrets and dark secrets.",
+        "universe": "Fantasy",
+        "type": "Dark",
+        "img": "photos3/Dark.jpg"
+    },
+    {
+        "id": "7",
+        "title": "Disney Castle",
+        "vendor_code": "307",
+        "description": "The iconic fairytale castle where dreams really do come true.",
+        "universe": "Disney",
+        "type": "Fairytale",
+        "img": "photos3/Disney.jpg"
+    },
+    {
+        "id": "8",
+        "title": "Fairytale Castle",
+        "vendor_code": "308",
+        "description": "A classic storybook castle with elegant towers and gardens.",
+        "universe": "Fairy Tale",
+        "type": "Fairytale",
+        "img": "photos3/Fairytale.jpg"
+    },
+    {
+        "id": "9",
+        "title": "Fire Castle",
+        "vendor_code": "309",
+        "description": "A blazing castle forged in eternal flames and molten stone.",
+        "universe": "Fantasy",
+        "type": "Fire",
+        "img": "photos3/Fire.jpg"
+    },
+    {
+        "id": "10",
+        "title": "Football Castle",
+        "vendor_code": "310",
+        "description": "A sporty castle with the stadium and training grounds for champions.",
+        "universe": "Original",
+        "type": "Football",
+        "img": "photos3/Football.jpg"
+    },
+    {
+        "id": "11",
+        "title": "Forest Castle",
+        "vendor_code": "311",
+        "description": "A hidden castle nestled deep within an enchanted forest.",
+        "universe": "Fantasy",
+        "type": "Forest",
+        "img": "photos3/Forest.jpg"
+    },
+    {
+        "id": "12",
+        "title": "The Castle on the Hill",
+        "vendor_code": "312",
+        "description": "A big castle on the hill.",
+        "universe": "Fantasy",
+        "type": "Fort",
+        "img": "photos3/Fort.jpg"
+    },
+    {
+        "id": "13",
+        "title": "Garden Castle",
+        "vendor_code": "313",
+        "description": "A blooming castle surrounded by fragrant gardens and fountains.",
+        "universe": "Fantasy",
+        "type": "Garden",
+        "img": "photos3/Garden.jpg"
+    },
+    {
+        "id": "14",
+        "title": "Gothic Castle",
+        "vendor_code": "314",
+        "description": "A dark and elegant castle with pointed arches and stained glass.",
+        "universe": "Fantasy",
+        "type": "Gothic",
+        "img": "photos3/Gothic.jpg"
+    },
+    {
+        "id": "15",
+        "title": "Ice Castle",
+        "vendor_code": "315",
+        "description": "A shimmering palace of ice and snow, sparkling in the light.",
+        "universe": "Fantasy (Frozen)",
+        "type": "Ice",
+        "img": "photos3/Ice.jpg"
+    },
+    {
+        "id": "16",
+        "title": "Pink Castle",
+        "vendor_code": "316",
+        "description": "A sweet and charming castle in soft pink hues.",
+        "universe": "Fantasy",
+        "type": "Pink",
+        "img": "photos3/Pink.jpg"
+    },
+    {
+        "id": "17",
+        "title": "Tower Castle",
+        "vendor_code": "317",
+        "description": "A tower that can serve as a dwelling.",
+        "universe": "Fantasy",
+        "type": "Tower",
+        "img": "photos3/Tower.jpg"
+    },
+    {
+        "id": "18",
+        "title": "Ship Castle",
+        "vendor_code": "318",
+        "description": "A floating ship, sailing the seas. It could be the castle, why not? :)",
+        "universe": "Fantasy",
+        "type": "Ship",
+        "img": "photos3/Ship.jpg"
+    },
+    {
+        "id": "19",
+        "title": "Underground Castle",
+        "vendor_code": "319",
+        "description": "A hidden castle carved deep beneath the earth.",
+        "universe": "Fantasy",
+        "type": "Underground",
+        "img": "photos3/Underground.jpg"
+    },
+    {
+        "id": "20",
+        "title": "Underwater Castle",
+        "vendor_code": "320",
+        "description": "A magical castle resting at the bottom of the ocean.",
+        "universe": "Fantasy",
+        "type": "Underwater",
+        "img": "photos3/Underwater.jpg"
+    },
+    {
+        "id": "21",
+        "title": "Near-Water Castle",
+        "vendor_code": "321",
+        "description": "A serene castle surrounded by lakes, waterfalls and rivers.",
+        "universe": "Fantasy",
+        "type": "Near-Water",
+        "img": "photos3/Water.jpg"
+    },
+    {
+        "id": "22",
+        "title": "White Castle",
+        "vendor_code": "322",
+        "description": "A cute castle surrounded by flowers.",
+        "universe": "Fantasy",
+        "type": "White",
+        "img": "photos3/Rose.jpg"
+    },
+    {
+        "id": "23",
+        "title": "Pyramid Castle",
+        "vendor_code": "323",
+        "description": "A castle for those who love Egyptian style.",
+        "universe": "Fantasy",
+        "type": "Pyramid",
+        "img": "photos3/Pyramid.jpg"
+    }
+]
