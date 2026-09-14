@@ -205,5 +205,14 @@
         "universe": "Fantasy",
         "type": "Pyramid",
         "img": "photos3/Pyramid.jpg"
+    },
+     {
+        "id": "24",
+        "title": "Swamp Castle",
+        "vendor_code": "324",
+        "description": "A fortress hidden in the swamps.",
+        "universe": "Fantasy",
+        "type": "Swamp fortress",
+        "img": "photos3/Swamp.jpg"
     }
 ]
