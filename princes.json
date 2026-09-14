@@ -377,7 +377,7 @@
         "id": "35",
         "title": "Alonso",
         "vendor_code": "235",
-        "description": "A legendary Spanish footballer known for his vision and skill.",
+        "description": "A legendary Spanish king known for his ambitions.",
         "universe": "Original",
         "wife": "Dastri",
         "pets": "None",
@@ -460,5 +460,16 @@
         "pets": "None",
         "price": "12",
         "img": "photos2/Sergio.jpg"
+    },
+    {
+        "id": "43",
+        "title": "Diaval",
+        "vendor_code": "243",
+        "description": "A powerful crow-prince and the servant of Maleficent.",
+        "universe": "Disney",
+        "wife": "None",
+        "pets": "None",
+        "price": "100",
+        "img": "photos2/Diaval.jpg"
     }
 ]
