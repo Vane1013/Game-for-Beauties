@@ -515,5 +515,16 @@
         "pets": "None",
         "price": "30",
         "img": "photos/pilar.jpg"
+    },
+    {
+        "id": "48",
+        "title": "Maleficent",
+        "vendor_code": "148",
+        "description": "A mystical character and the wife of Prince Sergio.",
+        "universe": "Disney",
+        "husband": "None",
+        "pets": "Diaval",
+        "price": "200",
+        "img": "photos/maleficent.jpg"
     }
 ]
