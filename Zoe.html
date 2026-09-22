@@ -9,9 +9,9 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ——— ОБЩИЙ СТИЛЬ ——— */
+        /* ——— ОБЩИЙ СТИЛЬ (розово-сиреневый, как везде) ——— */
         body {
-            background: linear-gradient(135deg, #e8f5e9 0%, #f3e5f5 100%);
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
             font-family: 'Segoe UI', 'Roboto', sans-serif;
             min-height: 100vh;
             padding: 2rem 0;
@@ -35,6 +35,7 @@
             border: none;
         }
 
+        /* ——— ХЕДЕР — ЗЕЛЁНЫЙ (как у Zoe-ростка) ——— */
         .princess-header {
             background: linear-gradient(145deg, #e8f5e9, #f0f8f0);
             border-radius: 32px 32px 0 0 !important;
@@ -54,101 +55,103 @@
             font-size: 1.1rem;
         }
 
+        /* ——— НАВИГАЦИЯ — СТАНДАРТНАЯ СИРЕНЕВАЯ ——— */
         .nav-tabs .nav-link {
             border: none;
             border-radius: 40px;
             padding: 0.6rem 1.6rem;
             margin: 0 0.2rem;
-            color: #3d5a48;
+            color: #5a3d6b;
             font-weight: 500;
             background: transparent;
             transition: all 0.2s;
         }
 
         .nav-tabs .nav-link:hover {
-            background: rgba(200, 240, 210, 0.5);
-            color: #2e5a3e;
+            background: rgba(255, 215, 245, 0.5);
+            color: #3a1f4a;
             transform: translateY(-1px);
         }
 
         .nav-tabs .nav-link.active {
-            background: #a8d9b8;
-            color: #1e3a2a;
+            background: #d4b0d9;
+            color: #2d1a3a;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(120, 180, 140, 0.3);
+            box-shadow: 0 4px 12px rgba(180, 120, 200, 0.3);
         }
 
+        /* ——— ФУТЕР — СТАНДАРТНЫЙ ——— */
         .card-footer {
             border-radius: 0 0 32px 32px !important;
-            background: rgba(240, 250, 245, 0.5);
+            background: rgba(255, 245, 250, 0.5);
             backdrop-filter: blur(4px);
-            color: #4e7a5e;
+            color: #5a3d6b;
             font-weight: 300;
         }
 
-        /* ——— БЮДЖЕТ (зелёный оттенок) ——— */
+        /* ——— БЮДЖЕТ — СТАНДАРТНЫЙ СИРЕНЕВЫЙ ——— */
         .budget-display {
-            background: linear-gradient(135deg, rgba(168, 217, 184, 0.4), rgba(212, 176, 217, 0.2));
+            background: linear-gradient(135deg, rgba(212, 176, 217, 0.4), rgba(180, 139, 196, 0.3));
             backdrop-filter: blur(6px);
-            color: #2e5a3e;
+            color: #3d2a48;
             border-radius: 28px;
             padding: 22px 30px;
             margin: 0 0 30px 0;
-            border: 2px solid rgba(168, 217, 184, 0.5);
-            box-shadow: 0 8px 24px -8px rgba(120, 180, 140, 0.2);
+            border: 2px solid rgba(212, 176, 217, 0.4);
+            box-shadow: 0 8px 24px -8px rgba(150, 100, 170, 0.2);
         }
 
         .budget-display h4 {
-            color: #2e5a3e;
+            color: #4a2c5e;
             font-weight: 600;
         }
 
         .budget-display .h1 {
-            color: #2e5a3e;
+            color: #4a2c5e;
             font-weight: 700;
-            text-shadow: 0 2px 8px rgba(200, 240, 210, 0.5);
+            text-shadow: 0 2px 8px rgba(255, 215, 245, 0.5);
         }
 
         .budget-display small {
-            color: #4e7a5e;
+            color: #7b5a8c;
         }
 
-        /* ——— СТАТИСТИКА ——— */
+        /* ——— СТАТИСТИКА — СТАНДАРТНАЯ ——— */
         .stats-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(4px);
             border-radius: 24px;
-            border: 1px solid rgba(168, 217, 184, 0.25);
-            box-shadow: 0 6px 20px -8px rgba(120, 180, 140, 0.15);
+            border: 1px solid rgba(212, 176, 217, 0.2);
+            box-shadow: 0 6px 20px -8px rgba(150, 100, 170, 0.12);
             transition: transform 0.2s ease;
         }
 
         .stats-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px -10px rgba(120, 180, 140, 0.25);
+            box-shadow: 0 12px 30px -10px rgba(150, 100, 170, 0.25);
         }
 
         .stats-card h3 {
-            color: #2e5a3e;
+            color: #4a2c5e;
             font-weight: 700;
         }
 
         .stats-card p {
-            color: #4e7a5e;
+            color: #7b5a8c;
         }
 
-        /* ——— ЗАГОЛОВКИ ОТСЕКОВ ——— */
+        /* ——— ЗАГОЛОВКИ ОТСЕКОВ — СТАНДАРТНЫЕ СИРЕНЕВЫЕ ——— */
         .position-title {
             font-weight: 600;
             font-size: 1.5rem;
             margin-top: 2rem;
             padding-bottom: 0.5rem;
-            color: #2e5a3e;
-            border-bottom: 2px solid #a8d9b8;
+            color: #4a2c5e;
+            border-bottom: 2px solid #d4b0d9;
             display: inline-block;
         }
 
-        /* ——— ПУСТЫЕ ОТСЕКИ ——— */
+        /* ——— ПУСТЫЕ ОТСЕКИ — СТАНДАРТНЫЕ ——— */
         .empty-section {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(4px);
@@ -156,48 +159,48 @@
             padding: 50px 30px;
             text-align: center;
             margin: 16px 0 20px;
-            border: 2px dashed rgba(168, 217, 184, 0.5);
+            border: 2px dashed rgba(212, 176, 217, 0.4);
             transition: all 0.3s ease;
         }
 
         .empty-section:hover {
             background: rgba(255, 255, 255, 0.7);
-            border-color: rgba(168, 217, 184, 0.7);
+            border-color: rgba(212, 176, 217, 0.6);
         }
 
         .empty-icon {
             font-size: 4rem;
-            color: #a8d9b8;
+            color: #d4b0d9;
             margin-bottom: 1rem;
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         .empty-section p {
-            color: #4e7a5e;
+            color: #7b5a8c;
             font-size: 1.05rem;
             margin-bottom: 0;
         }
 
-        /* ——— ПРИЗЫВ К ДЕЙСТВИЮ ——— */
+        /* ——— ПРИЗЫВ К ДЕЙСТВИЮ — СТАНДАРТНЫЙ СИРЕНЕВЫЙ ——— */
         .cta-card {
-            background: linear-gradient(135deg, rgba(168, 217, 184, 0.25), rgba(212, 176, 217, 0.15));
+            background: linear-gradient(135deg, rgba(212, 176, 217, 0.2), rgba(180, 139, 196, 0.1));
             backdrop-filter: blur(6px);
             border-radius: 28px;
-            border: 2px solid rgba(168, 217, 184, 0.4);
-            box-shadow: 0 12px 36px -12px rgba(120, 180, 140, 0.2);
+            border: 2px solid rgba(212, 176, 217, 0.3);
+            box-shadow: 0 12px 36px -12px rgba(150, 100, 170, 0.2);
         }
 
         .cta-card h3 {
-            color: #2e5a3e;
+            color: #4a2c5e;
             font-weight: 600;
         }
 
         .cta-card .lead {
-            color: #3d5a48;
+            color: #5a3d6b;
         }
 
         .btn-cta {
-            background: linear-gradient(135deg, #a8d9b8, #7bbf8f);
+            background: linear-gradient(135deg, #d4b0d9, #b58bc4);
             color: white;
             border: none;
             border-radius: 40px;
@@ -210,14 +213,14 @@
 
         .btn-cta:hover {
             transform: scale(1.04);
-            box-shadow: 0 8px 24px rgba(123, 191, 143, 0.5);
+            box-shadow: 0 8px 24px rgba(180, 120, 200, 0.4);
             color: white;
         }
 
         .btn-cta-outline {
             background: transparent;
-            color: #4e7a5e;
-            border: 2px solid #a8d9b8;
+            color: #7b5a8c;
+            border: 2px solid #d4b0d9;
             border-radius: 40px;
             padding: 12px 30px;
             font-weight: 600;
@@ -226,9 +229,9 @@
         }
 
         .btn-cta-outline:hover {
-            background: #a8d9b8;
+            background: #d4b0d9;
             color: white;
-            border-color: #7bbf8f;
+            border-color: #b58bc4;
         }
 
         @media (max-width: 768px) {
@@ -245,11 +248,11 @@
 
     <div class="container">
 
-        <!-- ===== ХЕДЕР ===== -->
+        <!-- ===== ХЕДЕР (зелёный, как росток) ===== -->
         <header class="card card-header princess-header">
             <div class="card-body text-center">
                 <h3 class="card-title">
-                    <i class="fas fa-seedling me-2" style="color:#5aa870;"></i>Zoe's World
+                    <i class="fas fa-spa me-2" style="color:#5aa870;"></i>Zoe's World
                     <br><small><i class="fas fa-sparkles me-1"></i>Grow your kingdom with love and care!</small>
                 </h3>
             </div>
@@ -298,12 +301,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./Vika.html">
-                            <i class="fas fa-heart me-1" style="color:#b58bc4;"></i>Vika's World
+                            <i class="fas fa-spa me-1" style="color:#b58bc4;"></i>Vika's World
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="./Zoe.html">
-                            <i class="fas fa-seedling me-1" style="color:#b58bc4;"></i>Zoe's World
+                            <i class="fas fa-spa me-1" style="color:#b58bc4;"></i>Zoe's World
                         </a>
                     </li>
                     <li class="nav-item">
@@ -322,7 +325,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-8">
                             <h4 class="mb-2">
-                                <i class="fas fa-seedling me-2" style="color:#5aa870;"></i>Zoe's Budget
+                                <i class="fas fa-spa me-2" style="color:#b58bc4;"></i>Zoe's Budget
                             </h4>
                             <p class="mb-0">Current stars and collection statistics</p>
                         </div>
@@ -378,16 +381,16 @@
                 </div>
 
                 <h5 class="card-title text-center mb-4 mt-5">
-                    <i class="fas fa-seedling me-2" style="color:#5aa870;"></i>
+                    <i class="fas fa-spa me-2" style="color:#b58bc4;"></i>
                     My Collection
-                    <i class="fas fa-seedling ms-2" style="color:#5aa870;"></i>
+                    <i class="fas fa-spa ms-2" style="color:#b58bc4;"></i>
                 </h5>
 
                 <!-- ОТСЕК 1: ПРИНЦЕССЫ -->
                 <div class="row mt-4">
                     <div class="col-12">
                         <h3 class="position-title">
-                            <i class="fas fa-crown me-2" style="color:#5aa870;"></i>My Princesses
+                            <i class="fas fa-crown me-2" style="color:#d47b9e;"></i>My Princesses
                         </h3>
                     </div>
                 </div>
@@ -404,7 +407,7 @@
                 <div class="row mt-5">
                     <div class="col-12">
                         <h3 class="position-title">
-                            <i class="fas fa-chess-king me-2" style="color:#5aa870;"></i>My Princes
+                            <i class="fas fa-chess-king me-2" style="color:#b58bc4;"></i>My Princes
                         </h3>
                     </div>
                 </div>
@@ -421,7 +424,7 @@
                 <div class="row mt-5">
                     <div class="col-12">
                         <h3 class="position-title">
-                            <i class="fas fa-landmark me-2" style="color:#5aa870;"></i>My Castles
+                            <i class="fas fa-landmark me-2" style="color:#b58bc4;"></i>My Castles
                         </h3>
                     </div>
                 </div>
@@ -438,7 +441,7 @@
                 <div class="row mt-5">
                     <div class="col-12">
                         <h3 class="position-title">
-                            <i class="fas fa-paw me-2" style="color:#5aa870;"></i>My Pets
+                            <i class="fas fa-paw me-2" style="color:#d47b9e;"></i>My Pets
                         </h3>
                     </div>
                 </div>
@@ -454,7 +457,7 @@
                 <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
                 <div class="card cta-card mt-5">
                     <div class="card-body text-center py-5">
-                        <div style="font-size: 3rem; margin-bottom: 16px;">🌱</div>
+                        <div style="font-size: 3rem; margin-bottom: 16px;">🌸</div>
                         <h3>Watch Your World Bloom!</h3>
                         <p class="lead mb-4">
                             Great job! Keep collecting princesses, princes, castles and pets<br>
@@ -478,9 +481,9 @@
         <footer class="card card-footer mt-3">
             <div class="card-body text-center">
                 <p class="mb-0">
-                    <i class="fas fa-seedling me-1" style="color:#5aa870;"></i>
+                    <i class="fas fa-spa me-1" style="color:#b58bc4;"></i>
                     © Game of Beauties — Zoe's World
-                    <i class="fas fa-seedling ms-1" style="color:#5aa870;"></i>
+                    <i class="fas fa-spa ms-1" style="color:#b58bc4;"></i>
                 </p>
             </div>
         </footer>
