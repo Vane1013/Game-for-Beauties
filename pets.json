@@ -298,13 +298,13 @@
     },
     {
         "id": "28",
-        "title": "Carnivorous Plant",
+        "title": "Winnie-the-Pooh and Piglet",
         "vendor_code": "428",
-        "description": "A hungry little plant with sharp teeth and a big appetite.",
-        "universe": "Original",
+        "description": "Two best friends from the famous books and the movies.",
+        "universe": "Winnie-the-Pooh",
         "owner": "None",
         "pets": "None",
-        "price": "180",
+        "price": "200",
         "img": "photos4/Carnivorousplant.jpg"
     },
     {
@@ -394,5 +394,16 @@
         "pets": "None",
         "price": "480",
         "img": "photos4/Toothless.jpg"
+    },
+    {
+        "id": "37",
+        "title": "Carnivorous Plant",
+        "vendor_code": "437",
+        "description": "A hungry little plant with sharp teeth and a big appetite.",
+        "universe": "Original",
+        "owner": "None",
+        "pets": "None",
+        "price": "180",
+        "img": "photos4/Carnivorousplant.jpg"
     }
 ]
