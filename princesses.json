@@ -7,7 +7,7 @@
         "universe": "Cartoon",
         "husband": "None",
         "pets": "None",
-        "price": "50",
+        "price": "120",
         "img": "photos/peppa.jpg"
     },
     {
@@ -62,7 +62,7 @@
         "universe": "Disney",
         "husband": "John Smith",
         "pets": "Meeko",
-        "price": "100",
+        "price": "180",
         "img": "photos/pocahontas.jpg"
     },
     {
@@ -73,7 +73,7 @@
         "universe": "Disney",
         "husband": "Li Shang",
         "pets": "Mushu",
-        "price": "70",
+        "price": "220",
         "img": "photos/mulan.jpg"
     },
     {
@@ -84,7 +84,7 @@
         "universe": "Disney",
         "husband": "Prince Eric",
         "pets": "Flounder",
-        "price": "150",
+        "price": "200",
         "img": "photos/ariel.jpg"
     },
     {
@@ -95,7 +95,7 @@
         "universe": "Disney",
         "husband": "Aladdin",
         "pets": "Rajah",
-        "price": "100",
+        "price": "210",
         "img": "photos/jasmine.jpg"
     },
     {
@@ -106,7 +106,7 @@
         "universe": "Disney (Frozen)",
         "husband": "Kristoff",
         "pets": "Olaf",
-        "price": "110",
+        "price": "230",
         "img": "photos/anna.jpg"
     },
     {
@@ -117,7 +117,7 @@
         "universe": "Disney (Frozen)",
         "husband": "None",
         "pets": "Frozen Creatures",
-        "price": "120",
+        "price": "350",
         "img": "photos/elsa.jpg"
     },
     {
@@ -128,7 +128,7 @@
         "universe": "Disney",
         "husband": "Eugene Fitzherbert (Flynn Rider)",
         "pets": "Pascal",
-        "price": "60",
+        "price": "240",
         "img": "photos/raiponce.jpg"
     },
     {
@@ -139,7 +139,7 @@
         "universe": "Disney",
         "husband": "Prince Naveen",
         "pets": "Froggy",
-        "price": "55",
+        "price": "190",
         "img": "photos/tiana.jpg"
     },
     {
@@ -150,7 +150,7 @@
         "universe": "Disney (Brave)",
         "husband": "None",
         "pets": "None",
-        "price": "50",
+        "price": "200",
         "img": "photos/merida.jpg"
     },
     {
@@ -161,7 +161,7 @@
         "universe": "Disney",
         "husband": "None",
         "pets": "Heihei",
-        "price": "75",
+        "price": "250",
         "img": "photos/moana.jpg"
     },
     {
@@ -172,7 +172,7 @@
         "universe": "DreamWorks (Shrek)",
         "husband": "Shrek",
         "pets": "None",
-        "price": "30",
+        "price": "180",
         "img": "photos/fiona.jpg"
     },
     {
@@ -183,7 +183,7 @@
         "universe": "Disney (Alice in Wonderland)",
         "husband": "None",
         "pets": "None",
-        "price": "25",
+        "price": "150",
         "img": "photos/alice.jpg"
     },
     {
@@ -194,7 +194,7 @@
         "universe": "Astrid Lindgren",
         "husband": "None",
         "pets": "Mr. Nilsson",
-        "price": "15",
+        "price": "130",
         "img": "photos/pippi.jpg"
     },
     {
@@ -205,7 +205,7 @@
         "universe": "Fairy Tale",
         "husband": "None",
         "pets": "Wolfy",
-        "price": "10",
+        "price": "120",
         "img": "photos/redhood.jpg"
     },
     {
@@ -216,7 +216,7 @@
         "universe": "Russian Fairy Tale",
         "husband": "None",
         "pets": "None",
-        "price": "20",
+        "price": "140",
         "img": "photos/vasilisa.jpg"
     },
     {
@@ -227,7 +227,7 @@
         "universe": "Russian Cartoon",
         "husband": "Troubadour",
         "pets": "None",
-        "price": "35",
+        "price": "130",
         "img": "photos/bremenprincess.jpg"
     },
     {
@@ -238,7 +238,7 @@
         "universe": "Pixar (Toy Story)",
         "husband": "None",
         "pets": "None",
-        "price": "10",
+        "price": "160",
         "img": "photos/jessie.jpg"
     },
     {
@@ -249,7 +249,7 @@
         "universe": "Pixar (Cars)",
         "husband": "Lightning McQueen",
         "pets": "None",
-        "price": "25",
+        "price": "150",
         "img": "photos/sally.jpg"
     },
     {
@@ -260,7 +260,7 @@
         "universe": "Russian Cartoon (Smeshariki)",
         "husband": "None",
         "pets": "None",
-        "price": "80",
+        "price": "120",
         "img": "photos/nyusha.jpg"
     },
     {
@@ -271,7 +271,7 @@
         "universe": "Disney (Robin Hood)",
         "husband": "Robin Hood",
         "pets": "None",
-        "price": "37",
+        "price": "170",
         "img": "photos/marion.jpg"
     },
     {
@@ -282,7 +282,7 @@
         "universe": "Minecraft",
         "husband": "None",
         "pets": "What you wish",
-        "price": "40",
+        "price": "150",
         "img": "photos/alex.jpg"
     },
     {
@@ -293,7 +293,7 @@
         "universe": "Original",
         "husband": "None",
         "pets": "None",
-        "price": "8",
+        "price": "130",
         "img": "photos/laya.jpg"
     },
     {
@@ -304,7 +304,7 @@
         "universe": "Littlest Pet Shop",
         "husband": "None",
         "pets": "Many pets",
-        "price": "17",
+        "price": "120",
         "img": "photos/blythe.jpg"
     },
     {
@@ -315,7 +315,7 @@
         "universe": "Star Wars",
         "husband": "Han Solo",
         "pets": "None",
-        "price": "14",
+        "price": "300",
         "img": "photos/leia.jpg"
     },
     {
@@ -326,7 +326,7 @@
         "universe": "Star Wars",
         "husband": "Anakin Skywalker",
         "pets": "None",
-        "price": "16",
+        "price": "280",
         "img": "photos/padme.jpg"
     },
     {
@@ -337,7 +337,7 @@
         "universe": "The Matrix",
         "husband": "Neo",
         "pets": "None",
-        "price": "22",
+        "price": "260",
         "img": "photos/trinity.jpg"
     },
     {
@@ -348,7 +348,7 @@
         "universe": "The Hobbit",
         "husband": "Legolas",
         "pets": "None",
-        "price": "30",
+        "price": "270",
         "img": "photos/tauriel.jpg"
     },
     {
@@ -359,7 +359,7 @@
         "universe": "Indiana Jones",
         "husband": "Indiana Jones",
         "pets": "None",
-        "price": "5",
+        "price": "160",
         "img": "photos/marion.jpg"
     },
     {
@@ -392,7 +392,7 @@
         "universe": "Van Helsing",
         "husband": "None",
         "pets": "None",
-        "price": "32",
+        "price": "180",
         "img": "photos/annahelsing.jpg"
     },
     {
@@ -403,7 +403,7 @@
         "universe": "Van Helsing",
         "husband": "None",
         "pets": "None",
-        "price": "33",
+        "price": "200",
         "img": "photos/dracula.jpg"
     },
     {
@@ -414,7 +414,7 @@
         "universe": "Titanic",
         "husband": "Jack Dawson",
         "pets": "None",
-        "price": "14",
+        "price": "140",
         "img": "photos/rose.jpg"
     },
     {
@@ -425,7 +425,7 @@
         "universe": "Barbie",
         "husband": "Ken",
         "pets": "Many pets",
-        "price": "90",
+        "price": "180",
         "img": "photos/barbie.jpg"
     },
     {
@@ -436,7 +436,7 @@
         "universe": "Original",
         "husband": "Alonso",
         "pets": "None",
-        "price": "3",
+        "price": "100",
         "img": "photos/dastri.jpg"
     },
     {
@@ -447,7 +447,7 @@
         "universe": "Original",
         "husband": "None",
         "pets": "None",
-        "price": "6",
+        "price": "110",
         "img": "photos/loksan.jpg"
     },
     {
@@ -458,7 +458,7 @@
         "universe": "Original",
         "husband": "None",
         "pets": "None",
-        "price": "8",
+        "price": "105",
         "img": "photos/rachel.jpg"
     },
     {
@@ -469,7 +469,7 @@
         "universe": "Original",
         "husband": "Toni",
         "pets": "None",
-        "price": "9",
+        "price": "115",
         "img": "photos/vanessa.jpg"
     },
     {
@@ -480,7 +480,7 @@
         "universe": "Original",
         "husband": "Zlatko",
         "pets": "None",
-        "price": "10",
+        "price": "120",
         "img": "photos/aelita.jpg"
     },
     {
@@ -491,7 +491,7 @@
         "universe": "Original",
         "husband": "Cristiano",
         "pets": "None",
-        "price": "20",
+        "price": "135",
         "img": "photos/georgina.jpg"
     },
     {
@@ -502,7 +502,7 @@
         "universe": "Original",
         "husband": "Vincent",
         "pets": "None",
-        "price": "25",
+        "price": "125",
         "img": "photos/catherine.jpg"
     },
     {
@@ -513,7 +513,7 @@
         "universe": "Original",
         "husband": "Sergio",
         "pets": "None",
-        "price": "30",
+        "price": "130",
         "img": "photos/pilar.jpg"
     },
     {
