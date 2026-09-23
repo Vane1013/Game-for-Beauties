@@ -647,16 +647,5 @@
         "pets": "None",
         "price": "250",
         "img": "photos/Marlin.jpg"
-    },
-    {
-        "id": "60",
-        "title": "Bloat",
-        "vendor_code": "260",
-        "description": "A pufferfish from the Tank Gang, funny and a bit grumpy.",
-        "universe": "Disney (Finding Nemo)",
-        "husband": "None",
-        "pets": "None",
-        "price": "150",
-        "img": "photos/Bloat.jpg"
     }
 ]
