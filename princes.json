@@ -481,7 +481,7 @@
         "husband": "Renesmee Cullen",
         "pets": "None",
         "price": "77",
-        "img": "photos/Jacob.jpg"
+        "img": "photos2/Jacob.jpg"
     },
     {
         "id": "45",
@@ -492,7 +492,7 @@
         "husband": "None",
         "pets": "None",
         "price": "150",
-        "img": "photos/Carlson.jpg"
+        "img": "photos2/Carlson.jpg"
     },
     {
         "id": "46",
@@ -503,7 +503,7 @@
         "husband": "None",
         "pets": "None",
         "price": "180",
-        "img": "photos/Mason.jpg"
+        "img": "photos2/Mason.jpg"
     },
     {
         "id": "47",
@@ -514,7 +514,7 @@
         "husband": "None",
         "pets": "None",
         "price": "450",
-        "img": "photos/Billcipher.jpg"
+        "img": "photos2/Billcipher.jpg"
     },
     {
         "id": "48",
@@ -525,7 +525,7 @@
         "husband": "None",
         "pets": "None",
         "price": "200",
-        "img": "photos/Anger.jpg"
+        "img": "photos2/Anger.jpg"
     },
     {
         "id": "49",
@@ -536,7 +536,7 @@
         "husband": "None",
         "pets": "None",
         "price": "200",
-        "img": "photos/Fear.jpg"
+        "img": "photos2/Fear.jpg"
     },
     {
         "id": "50",
@@ -547,7 +547,7 @@
         "husband": "Sigyn",
         "pets": "None",
         "price": "500",
-        "img": "photos/Loki.jpg"
+        "img": "photos2/Loki.jpg"
     },
     {
         "id": "51",
@@ -558,7 +558,7 @@
         "husband": "None",
         "pets": "None",
         "price": "300",
-        "img": "photos/Kingjose.jpg"
+        "img": "photos2/Kingjose.jpg"
     },
     {
         "id": "52",
@@ -569,7 +569,7 @@
         "husband": "Elastigirl",
         "pets": "None",
         "price": "350",
-        "img": "photos/Mrincredible.jpg"
+        "img": "photos2/Mrincredible.jpg"
     },
     {
         "id": "53",
@@ -580,7 +580,7 @@
         "husband": "Astrid",
         "pets": "Toothless",
         "price": "320",
-        "img": "photos/Hiccup.jpg"
+        "img": "photos2/Hiccup.jpg"
     },
     {
         "id": "54",
@@ -591,7 +591,7 @@
         "husband": "None",
         "pets": "None",
         "price": "1",
-        "img": "photos/Gaston.jpg"
+        "img": "photos2/Gaston.jpg"
     },
     {
         "id": "55",
@@ -602,7 +602,7 @@
         "husband": "Judy Hopps",
         "pets": "None",
         "price": "280",
-        "img": "photos/Nickwilde.jpg"
+        "img": "photos2/Nickwilde.jpg"
     },
     {
         "id": "56",
@@ -613,7 +613,7 @@
         "husband": "None",
         "pets": "None",
         "price": "150",
-        "img": "photos/Frodo.jpg"
+        "img": "photos2/Frodo.jpg"
     },
     {
         "id": "57",
@@ -624,7 +624,7 @@
         "husband": "Nala",
         "pets": "None",
         "price": "400",
-        "img": "photos/Simba.jpg"
+        "img": "photos2/Simba.jpg"
     },
     {
         "id": "58",
@@ -635,7 +635,7 @@
         "husband": "None",
         "pets": "None",
         "price": "5",
-        "img": "photos/Scar.jpg"
+        "img": "photos2/Scar.jpg"
     },
     {
         "id": "59",
@@ -646,6 +646,6 @@
         "husband": "Coral",
         "pets": "None",
         "price": "250",
-        "img": "photos/Marlin.jpg"
+        "img": "photos2/Marlin.jpg"
     }
 ]
