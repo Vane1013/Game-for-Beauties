@@ -6,6 +6,7 @@
         "description": "A dreamy castle floating among the clouds, where wishes come true.",
         "universe": "Fantasy",
         "type": "Air",
+        "price": "650",
         "img": "photos3/Air.jpg"
     },
     {
@@ -15,6 +16,7 @@
         "description": "A grand and majestic castle with endless halls and towering spires.",
         "universe": "Fantasy",
         "type": "Big",
+        "price": "800",
         "img": "photos3/Big.jpg"
     },
     {
@@ -24,6 +26,7 @@
         "description": "A legendary pirate ship-castle sailing through stormy seas.",
         "universe": "Pirates of the Caribbean",
         "type": "Ship",
+        "price": "750",
         "img": "photos3/Blackpearl.jpg"
     },
     {
@@ -33,6 +36,7 @@
         "description": "A mysterious Transylvanian castle shrouded in legends.",
         "universe": "Dracula",
         "type": "Gothic",
+        "price": "700",
         "img": "photos3/Bran.jpg"
     },
     {
@@ -42,6 +46,7 @@
         "description": "A luminous castle glowing with warm golden light.",
         "universe": "Fantasy",
         "type": "Bright",
+        "price": "600",
         "img": "photos3/Bright.jpg"
     },
     {
@@ -51,6 +56,7 @@
         "description": "A shadowy fortress hiding ancient secrets and dark secrets.",
         "universe": "Fantasy",
         "type": "Dark",
+        "price": "680",
         "img": "photos3/Dark.jpg"
     },
     {
@@ -60,6 +66,7 @@
         "description": "The iconic fairytale castle where dreams really do come true.",
         "universe": "Disney",
         "type": "Fairytale",
+        "price": "800",
         "img": "photos3/Disney.jpg"
     },
     {
@@ -69,6 +76,7 @@
         "description": "A classic storybook castle with elegant towers and gardens.",
         "universe": "Fairy Tale",
         "type": "Fairytale",
+        "price": "720",
         "img": "photos3/Fairytale.jpg"
     },
     {
@@ -78,6 +86,7 @@
         "description": "A blazing castle forged in eternal flames and molten stone.",
         "universe": "Fantasy",
         "type": "Fire",
+        "price": "700",
         "img": "photos3/Fire.jpg"
     },
     {
@@ -87,6 +96,7 @@
         "description": "A sporty castle with the stadium and training grounds for champions.",
         "universe": "Original",
         "type": "Football",
+        "price": "550",
         "img": "photos3/Football.jpg"
     },
     {
@@ -96,6 +106,7 @@
         "description": "A hidden castle nestled deep within an enchanted forest.",
         "universe": "Fantasy",
         "type": "Forest",
+        "price": "580",
         "img": "photos3/Forest.jpg"
     },
     {
@@ -105,6 +116,7 @@
         "description": "A big castle on the hill.",
         "universe": "Fantasy",
         "type": "Fort",
+        "price": "620",
         "img": "photos3/Fort.jpg"
     },
     {
@@ -114,6 +126,7 @@
         "description": "A blooming castle surrounded by fragrant gardens and fountains.",
         "universe": "Fantasy",
         "type": "Garden",
+        "price": "640",
         "img": "photos3/Garden.jpg"
     },
     {
@@ -123,6 +136,7 @@
         "description": "A dark and elegant castle with pointed arches and stained glass.",
         "universe": "Fantasy",
         "type": "Gothic",
+        "price": "690",
         "img": "photos3/Gothic.jpg"
     },
     {
@@ -132,6 +146,7 @@
         "description": "A shimmering palace of ice and snow, sparkling in the light.",
         "universe": "Fantasy (Frozen)",
         "type": "Ice",
+        "price": "760",
         "img": "photos3/Ice.jpg"
     },
     {
@@ -141,6 +156,7 @@
         "description": "A sweet and charming castle in soft pink hues.",
         "universe": "Fantasy",
         "type": "Pink",
+        "price": "580",
         "img": "photos3/Pink.jpg"
     },
     {
@@ -150,6 +166,7 @@
         "description": "A tower that can serve as a dwelling.",
         "universe": "Fantasy",
         "type": "Tower",
+        "price": "500",
         "img": "photos3/Tower.jpg"
     },
     {
@@ -159,6 +176,7 @@
         "description": "A floating ship, sailing the seas. It could be the castle, why not? :)",
         "universe": "Fantasy",
         "type": "Ship",
+        "price": "630",
         "img": "photos3/Ship.jpg"
     },
     {
@@ -168,6 +186,7 @@
         "description": "A hidden castle carved deep beneath the earth.",
         "universe": "Fantasy",
         "type": "Underground",
+        "price": "670",
         "img": "photos3/Underground.jpg"
     },
     {
@@ -177,6 +196,7 @@
         "description": "A magical castle resting at the bottom of the ocean.",
         "universe": "Fantasy",
         "type": "Underwater",
+        "price": "780",
         "img": "photos3/Underwater.jpg"
     },
     {
@@ -186,6 +206,7 @@
         "description": "A serene castle surrounded by lakes, waterfalls and rivers.",
         "universe": "Fantasy",
         "type": "Near-Water",
+        "price": "610",
         "img": "photos3/Water.jpg"
     },
     {
@@ -195,6 +216,7 @@
         "description": "A cute castle surrounded by flowers.",
         "universe": "Fantasy",
         "type": "White",
+        "price": "590",
         "img": "photos3/Rose.jpg"
     },
     {
@@ -204,15 +226,17 @@
         "description": "A castle for those who love Egyptian style.",
         "universe": "Fantasy",
         "type": "Pyramid",
+        "price": "710",
         "img": "photos3/Pyramid.jpg"
     },
-     {
+    {
         "id": "24",
         "title": "Swamp Castle",
         "vendor_code": "324",
         "description": "A fortress hidden in the swamps.",
         "universe": "Fantasy",
         "type": "Swamp fortress",
+        "price": "660",
         "img": "photos3/Swamp.jpg"
     }
 ]
