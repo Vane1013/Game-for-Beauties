@@ -305,7 +305,7 @@
         "owner": "None",
         "pets": "None",
         "price": "200",
-        "img": "photos4/Carnivorousplant.jpg"
+        "img": "photos4/Winnie.jpg"
     },
     {
         "id": "29",
@@ -422,7 +422,7 @@
         "title": "Hyenas",
         "vendor_code": "439",
         "description": "Three powerful, funny and always hungry pets.",
-        "universe": "The Lion King",
+        "universe": "Disney (The Lion King)",
         "owner": "Scar",
         "pets": "None",
         "price": "100",
