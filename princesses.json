@@ -636,5 +636,16 @@
         "pets": "None",
         "price": "220",
         "img": "photos/Dory.jpg"
+    },
+    {
+        "id": "59",
+        "title": "Dora the Explorer",
+        "vendor_code": "158",
+        "description": "A brave girl explorer who loves travelling.",
+        "universe": "Dora the Explorer",
+        "husband": "None",
+        "pets": "None",
+        "price": "100",
+        "img": "photos/Dora.jpg"
     }
 ]
