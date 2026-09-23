@@ -405,5 +405,16 @@
         "pets": "None",
         "price": "180",
         "img": "photos4/Carnivorousplant.jpg"
+    },
+      {
+        "id": "38",
+        "title": "Bruce",
+        "vendor_code": "438",
+        "description": "A kind but hungry shark.",
+        "universe": "Finding Nemo",
+        "owner": "None",
+        "pets": "None",
+        "price": "150",
+        "img": "photos4/Bruce.jpg"
     }
 ]
