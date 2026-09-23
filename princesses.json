@@ -530,7 +530,7 @@
         {
         "id": "49",
         "title": "Freken Bok",
-        "vendor_code": "148",
+        "vendor_code": "149",
         "description": "A stern but caring housekeeper with a heart of gold deep down.",
         "universe": "Karlsson-on-the-Roof",
         "husband": "None",
@@ -541,7 +541,7 @@
     {
         "id": "50",
         "title": "Nala",
-        "vendor_code": "149",
+        "vendor_code": "150",
         "description": "A brave lioness and Simba's faithful companion, strong and wise.",
         "universe": "Disney (The Lion King)",
         "husband": "Simba",
@@ -552,7 +552,7 @@
     {
         "id": "51",
         "title": "Mabel",
-        "vendor_code": "150",
+        "vendor_code": "151",
         "description": "A cheerful and quirky girl from Gravity Falls who loves sweaters and adventure.",
         "universe": "Gravity Falls",
         "husband": "None",
@@ -563,7 +563,7 @@
     {
         "id": "52",
         "title": "Joy",
-        "vendor_code": "151",
+        "vendor_code": "152",
         "description": "A glowing yellow emotion who always tries to keep Riley happy.",
         "universe": "Inside Out",
         "husband": "None",
@@ -574,7 +574,7 @@
     {
         "id": "53",
         "title": "Sadness",
-        "vendor_code": "152",
+        "vendor_code": "153",
         "description": "A soft blue emotion who teaches us that it's okay not to be okay.",
         "universe": "Inside Out",
         "husband": "None",
@@ -585,7 +585,7 @@
     {
         "id": "54",
         "title": "Disgust",
-        "vendor_code": "153",
+        "vendor_code": "154",
         "description": "A green emotion who protects Riley from things that are 'gross'.",
         "universe": "Inside Out",
         "husband": "None",
@@ -596,7 +596,7 @@
     {
         "id": "55",
         "title": "Judy Hopps",
-        "vendor_code": "154",
+        "vendor_code": "155",
         "description": "A determined bunny police officer who never gives up on her dreams.",
         "universe": "Zootopia",
         "husband": "Nick Wilde",
@@ -607,7 +607,7 @@
     {
         "id": "56",
         "title": "Elastigirl",
-        "vendor_code": "155",
+        "vendor_code": "156",
         "description": "A flexible superhero mom who balances family and saving the world.",
         "universe": "The Incredibles",
         "husband": "Mr. Incredible",
@@ -618,7 +618,7 @@
     {
         "id": "57",
         "title": "Astrid",
-        "vendor_code": "156",
+        "vendor_code": "157",
         "description": "A fierce Viking warrior and Hiccup's brave companion.",
         "universe": "How to Train Your Dragon",
         "husband": "Hiccup",
@@ -629,7 +629,7 @@
     {
         "id": "58",
         "title": "Dory",
-        "vendor_code": "157",
+        "vendor_code": "158",
         "description": "A forgetful but endlessly kind blue fish who helps Nemo's father.",
         "universe": "Disney (Finding Nemo)",
         "husband": "None",
@@ -640,7 +640,7 @@
     {
         "id": "59",
         "title": "Dora the Explorer",
-        "vendor_code": "158",
+        "vendor_code": "159",
         "description": "A brave girl explorer who loves travelling.",
         "universe": "Dora the Explorer",
         "husband": "None",
