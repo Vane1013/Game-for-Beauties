@@ -243,14 +243,14 @@
     },
         {
         "id": "23",
-        "title": "Puppy",
+        "title": "Bimbo",
         "vendor_code": "423",
         "description": "The loyal little puppy of Karlsson's friend, always by his side.",
         "universe": "Karlsson-on-the-Roof",
         "owner": "Kid",
         "pets": "None",
         "price": "120",
-        "img": "photos4/Puppy.jpg"
+        "img": "photos4/Bimbo.jpg"
     },
     {
         "id": "24",
@@ -342,14 +342,14 @@
     },
     {
         "id": "32",
-        "title": "Korzhik",
+        "title": "Cookie Monster",
         "vendor_code": "432",
-        "description": "A sweet and playful kitten from 'Three Cats', always ready for fun.",
-        "universe": "Three Cats",
+        "description": "A sweet monster who loves cookies very much.",
+        "universe": "Sesame Street",
         "owner": "None",
         "pets": "None",
-        "price": "110",
-        "img": "photos4/Korzhik.jpg"
+        "price": "150",
+        "img": "photos4/Cookie.jpg"
     },
     {
         "id": "33",
@@ -427,5 +427,16 @@
         "pets": "None",
         "price": "100",
         "img": "photos4/Hyenas.jpg"
+    },
+    {
+        "id": "40",
+        "title": "Light fury",
+        "vendor_code": "440",
+        "description": "Cute girl dragon, Toothless's passion.",
+        "universe": "How to Train Your Dragon",
+        "owner": "Scar",
+        "pets": "None",
+        "price": "480",
+        "img": "photos4/Whitefury.jpg"
     }
 ]
