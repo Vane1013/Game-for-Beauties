@@ -7,7 +7,7 @@
         "universe": "Disney (Bambi)",
         "owner": "Snow White",
         "pets": "None",
-        "price": "30",
+        "price": "120",
         "img": "photos4/Bambi.jpg"
     },
     {
@@ -18,7 +18,7 @@
         "universe": "Fairy Tale",
         "owner": "Alice",
         "pets": "None",
-        "price": "15",
+        "price": "100",
         "img": "photos4/Butterfly.jpg"
     },
     {
@@ -29,7 +29,7 @@
         "universe": "Disney (The Aristocats)",
         "owner": "Duchess",
         "pets": "None",
-        "price": "80",
+        "price": "180",
         "img": "photos4/Cats.jpg"
     },
     {
@@ -40,7 +40,7 @@
         "universe": "Star Wars",
         "owner": "Han Solo",
         "pets": "None",
-        "price": "10",
+        "price": "150",
         "img": "photos4/Chubacca.jpg"
     },
     {
@@ -51,7 +51,7 @@
         "universe": "Disney (Lady and the Tramp)",
         "owner": "Various",
         "pets": "None",
-        "price": "80",
+        "price": "200",
         "img": "photos4/Dogs.jpg"
     },
     {
@@ -62,7 +62,7 @@
         "universe": "Disney (The Little Mermaid)",
         "owner": "Ariel",
         "pets": "None",
-        "price": "50",
+        "price": "130",
         "img": "photos4/Fish.jpg"
     },
     {
@@ -73,7 +73,7 @@
         "universe": "Disney (The Princess and the Frog)",
         "owner": "Tiana",
         "pets": "None",
-        "price": "60",
+        "price": "140",
         "img": "photos4/Frog.jpg"
     },
     {
@@ -84,7 +84,7 @@
         "universe": "Disney (Aladdin)",
         "owner": "Aladdin",
         "pets": "None",
-        "price": "55",
+        "price": "250",
         "img": "photos4/Genie.jpg"
     },
     {
@@ -95,7 +95,7 @@
         "universe": "My Little Pony",
         "owner": "Twilight Sparkle",
         "pets": "None",
-        "price": "25",
+        "price": "150",
         "img": "photos4/Horse.jpg"
     },
     {
@@ -106,7 +106,7 @@
         "universe": "Disney (The Jungle Book)",
         "owner": "Mowgli",
         "pets": "None",
-        "price": "40",
+        "price": "160",
         "img": "photos4/Kaa.jpg"
     },
     {
@@ -117,7 +117,7 @@
         "universe": "Disney (Cinderella)",
         "owner": "Cinderella",
         "pets": "None",
-        "price": "80",
+        "price": "180",
         "img": "photos4/Mice.jpg"
     },
     {
@@ -128,7 +128,7 @@
         "universe": "Disney (Mulan)",
         "owner": "Mulan",
         "pets": "None",
-        "price": "60",
+        "price": "170",
         "img": "photos4/Mushu.jpg"
     },
     {
@@ -139,7 +139,7 @@
         "universe": "Disney (Frozen)",
         "owner": "Elsa and Anna",
         "pets": "None",
-        "price": "100",
+        "price": "200",
         "img": "photos4/Olaf.jpg"
     },
     {
@@ -150,7 +150,7 @@
         "universe": "Disney (Tangled)",
         "owner": "Rapunzel",
         "pets": "None",
-        "price": "90",
+        "price": "150",
         "img": "photos4/Pascal.jpg"
     },
     {
@@ -161,7 +161,7 @@
         "universe": "Disney (Alice in Wonderland)",
         "owner": "Alice",
         "pets": "None",
-        "price": "10",
+        "price": "110",
         "img": "photos4/Rabbit.jpg"
     },
     {
@@ -172,7 +172,7 @@
         "universe": "Disney (Pocahontas)",
         "owner": "Pocahontas",
         "pets": "None",
-        "price": "75",
+        "price": "130",
         "img": "photos4/Racoon.jpg"
     },
     {
@@ -183,7 +183,7 @@
         "universe": "Original",
         "owner": "None",
         "pets": "None",
-        "price": "5",
+        "price": "100",
         "img": "photos4/Stella.jpg"
     },
     {
@@ -194,7 +194,7 @@
         "universe": "Disney (Frozen)",
         "owner": "Kristoff",
         "pets": "None",
-        "price": "55",
+        "price": "160",
         "img": "photos4/Sven.jpg"
     },
     {
@@ -205,7 +205,7 @@
         "universe": "Disney (Aladdin)",
         "owner": "Jasmine",
         "pets": "None",
-        "price": "35",
+        "price": "220",
         "img": "photos4/Tiger.jpg"
     },
     {
@@ -216,7 +216,7 @@
         "universe": "Original",
         "owner": "None",
         "pets": "None",
-        "price": "20",
+        "price": "140",
         "img": "photos4/Wolf.jpg"
     },
     {
@@ -227,7 +227,7 @@
         "universe": "Littlest Pet Shop",
         "owner": "Blythe",
         "pets": "None",
-        "price": "40",
+        "price": "120",
         "img": "photos4/Zoe.jpg"
     },
     {
@@ -238,7 +238,7 @@
         "universe": "Original",
         "owner": "Catherine",
         "pets": "None",
-        "price": "35",
+        "price": "125",
         "img": "photos4/Bat.jpg"
     },
         {
