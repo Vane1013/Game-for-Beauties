@@ -20,6 +20,7 @@ async function getResponce() {
         cardsContainer.className = 'row justify-content-center';
 
         content.forEach((item) => {
+            const formattedPrice = formatPrice(item.price);
             cardsContainer.innerHTML += `
                 <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-3">
                     <div class="princess-card h-100 d-flex flex-column">
@@ -41,12 +42,21 @@ async function getResponce() {
                             </div>
                             <p class="card-text flex-grow-1 small">${item.description}</p>
                             
+                            <div class="price-section mb-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge-star">${formattedPrice}</span>
+                                    <span class="text-muted small">Value</span>
+                                </div>
+                            </div>
+
                             <input type="hidden" name="vendor_code" value="${item.vendor_code}">
                             <div class="mt-auto">
-                                <button class="btn btn-buy w-100 gift-btn" 
+                                <button type="button"
+                                        class="btn btn-buy w-100 buy-btn" 
                                         data-castle-id="${item.id}"
-                                        data-castle-name="${item.title}">
-                                    <i class="fas fa-gift me-2"></i>Get as Gift
+                                        data-castle-name="${item.title}"
+                                        data-castle-price="${item.price}">
+                                    <i class="fas fa-shopping-cart me-2"></i>Buy
                                 </button>
                             </div>
                         </div>
@@ -57,7 +67,7 @@ async function getResponce() {
 
         node_for_insert.appendChild(cardsContainer);
 
-        addGiftButtonListeners();
+        addBuyButtonListeners();
 
     } catch (error) {
         console.error("Error loading castles:", error)
@@ -75,17 +85,22 @@ async function getResponce() {
     }
 }
 
-function addGiftButtonListeners() {
+function formatPrice(price) {
+    return `<i class="fas fa-star" style="color: #f5c542;"></i> ${price}`;
+}
+
+function addBuyButtonListeners() {
     document.addEventListener('click', function (e) {
-        const button = e.target.closest('.gift-btn');
+        const button = e.target.closest('.buy-btn');
         if (button) {
             const castleName = button.getAttribute('data-castle-name');
-            showGiftMessage(castleName);
+            const castlePrice = button.getAttribute('data-castle-price');
+            showPurchaseMessage(castleName, castlePrice);
         }
     });
 }
 
-function showGiftMessage(name) {
+function showPurchaseMessage(name, price) {
     const overlay = document.createElement('div');
     overlay.style.cssText = `
         position: fixed;
@@ -119,13 +134,16 @@ function showGiftMessage(name) {
     modal.innerHTML = `
         <div style="font-size: 4rem; margin-bottom: 16px;">🏰</div>
         <h2 style="color: #4a2c5e; font-weight: 600; margin-bottom: 12px;">
-            A Royal Gift!
+            Go to the Queen
         </h2>
-        <p style="color: #7b5a8c; font-size: 1.1rem; margin-bottom: 8px;">
-            This castle is given as a gift to your Prince or Princess
+        <p style="color: #7b5a8c; font-size: 1.2rem; margin-bottom: 8px;">
+            who will accept your purchase :)
         </p>
         <div style="margin: 20px 0; padding: 12px; background: rgba(212, 176, 217, 0.15); border-radius: 16px;">
             <span style="color: #4a2c5e; font-weight: 500;">${name}</span>
+            <span style="color: #b58bc4; font-weight: 600; margin-left: 12px;">
+                <i class="fas fa-star" style="color: #f5c542;"></i> ${price}
+            </span>
         </div>
         <button onclick="this.closest('div[style*=\\'position: fixed\\']').remove()" 
                 style="
