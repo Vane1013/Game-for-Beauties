@@ -471,5 +471,192 @@
         "pets": "None",
         "price": "100",
         "img": "photos2/Diaval.jpg"
+    },
+        {
+        "id": "44",
+        "title": "Jacob Black",
+        "vendor_code": "244",
+        "description": "A loyal werewolf from the Twilight saga, brave and hot-headed.",
+        "universe": "Twilight",
+        "husband": "Renesmee Cullen",
+        "pets": "None",
+        "price": "220",
+        "img": "photos/Jacob.jpg"
+    },
+    {
+        "id": "45",
+        "title": "Carlson",
+        "vendor_code": "245",
+        "description": "A cheerful, chubby man in his prime who loves jam and adventures.",
+        "universe": "Karlsson-on-the-Roof",
+        "husband": "None",
+        "pets": "None",
+        "price": "150",
+        "img": "photos/Carlson.jpg"
+    },
+    {
+        "id": "46",
+        "title": "Mason",
+        "vendor_code": "246",
+        "description": "A cool and mysterious guy from Gravity Falls with a charming smile.",
+        "universe": "Gravity Falls",
+        "husband": "None",
+        "pets": "None",
+        "price": "180",
+        "img": "photos/Mason.jpg"
+    },
+    {
+        "id": "47",
+        "title": "Bill Cipher",
+        "vendor_code": "247",
+        "description": "A chaotic dream demon from another dimension. Handle with care!",
+        "universe": "Gravity Falls",
+        "husband": "None",
+        "pets": "None",
+        "price": "450",
+        "img": "photos/Billcipher.jpg"
+    },
+    {
+        "id": "48",
+        "title": "Anger",
+        "vendor_code": "248",
+        "description": "A fiery red emotion who explodes when things go wrong.",
+        "universe": "Inside Out",
+        "husband": "None",
+        "pets": "None",
+        "price": "200",
+        "img": "photos/Anger.jpg"
+    },
+    {
+        "id": "49",
+        "title": "Fear",
+        "vendor_code": "249",
+        "description": "A nervous purple emotion always preparing for the worst.",
+        "universe": "Inside Out",
+        "husband": "None",
+        "pets": "None",
+        "price": "200",
+        "img": "photos/Fear.jpg"
+    },
+    {
+        "id": "50",
+        "title": "Loki",
+        "vendor_code": "250",
+        "description": "The God of Mischief — charming, cunning, and full of surprises.",
+        "universe": "Marvel",
+        "husband": "Sigyn",
+        "pets": "None",
+        "price": "500",
+        "img": "photos/Loki.jpg"
+    },
+    {
+        "id": "51",
+        "title": "King Jose",
+        "vendor_code": "251",
+        "description": "The one and only Special One — a charismatic football king.",
+        "universe": "Original (José Mourinho)",
+        "husband": "None",
+        "pets": "None",
+        "price": "300",
+        "img": "photos/Kingjose.jpg"
+    },
+    {
+        "id": "52",
+        "title": "Mr. Incredible",
+        "vendor_code": "252",
+        "description": "A super-strong hero who always saves the day, no matter what.",
+        "universe": "The Incredibles",
+        "husband": "Elastigirl",
+        "pets": "None",
+        "price": "350",
+        "img": "photos/Mrincredible.jpg"
+    },
+    {
+        "id": "53",
+        "title": "Hiccup",
+        "vendor_code": "253",
+        "description": "A clever young Viking who befriends dragons instead of fighting them.",
+        "universe": "How to Train Your Dragon",
+        "husband": "Astrid",
+        "pets": "Toothless",
+        "price": "320",
+        "img": "photos/Hiccup.jpg"
+    },
+    {
+        "id": "54",
+        "title": "Gaston",
+        "vendor_code": "254",
+        "description": "A boastful hunter with muscles but no heart. A real villain.",
+        "universe": "Disney (Beauty and the Beast)",
+        "husband": "None",
+        "pets": "None",
+        "price": "1",
+        "img": "photos/Gaston.jpg"
+    },
+    {
+        "id": "55",
+        "title": "Nick Wilde",
+        "vendor_code": "255",
+        "description": "A sly and charming fox with a heart of gold under the con-artist act.",
+        "universe": "Zootopia",
+        "husband": "Judy Hopps",
+        "pets": "None",
+        "price": "280",
+        "img": "photos/Nickwilde.jpg"
+    },
+    {
+        "id": "56",
+        "title": "Winnie-the-Pooh",
+        "vendor_code": "256",
+        "description": "A kind and honey-loving bear from the Hundred Acre Wood.",
+        "universe": "Winnie-the-Pooh",
+        "husband": "None",
+        "pets": "None",
+        "price": "180",
+        "img": "photos/Winnie.jpg"
+    },
+    {
+        "id": "57",
+        "title": "Simba",
+        "vendor_code": "257",
+        "description": "The brave lion cub who becomes king of the Pride Lands.",
+        "universe": "Disney (The Lion King)",
+        "husband": "Nala",
+        "pets": "None",
+        "price": "400",
+        "img": "photos/Simba.jpg"
+    },
+    {
+        "id": "58",
+        "title": "Scar",
+        "vendor_code": "258",
+        "description": "A cunning and jealous lion who plots against his own family.",
+        "universe": "Disney (The Lion King)",
+        "husband": "None",
+        "pets": "None",
+        "price": "50",
+        "img": "photos/Scar.jpg"
+    },
+    {
+        "id": "59",
+        "title": "Marlin",
+        "vendor_code": "259",
+        "description": "An overprotective clownfish father on a mission to find his son.",
+        "universe": "Disney (Finding Nemo)",
+        "husband": "Coral",
+        "pets": "None",
+        "price": "250",
+        "img": "photos/Marlin.jpg"
+    },
+    {
+        "id": "60",
+        "title": "Bloat",
+        "vendor_code": "260",
+        "description": "A pufferfish from the Tank Gang, funny and a bit grumpy.",
+        "universe": "Disney (Finding Nemo)",
+        "husband": "None",
+        "pets": "None",
+        "price": "150",
+        "img": "photos/Bloat.jpg"
     }
 ]
