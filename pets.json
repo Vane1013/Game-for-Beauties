@@ -240,5 +240,159 @@
         "pets": "None",
         "price": "35",
         "img": "photos4/Bat.jpg"
+    },
+        {
+        "id": "23",
+        "title": "Puppy",
+        "vendor_code": "423",
+        "description": "The loyal little puppy of Karlsson's friend, always by his side.",
+        "universe": "Karlsson-on-the-Roof",
+        "owner": "Kid",
+        "pets": "None",
+        "price": "120",
+        "img": "photos4/Puppy.jpg"
+    },
+    {
+        "id": "24",
+        "title": "Hare and Wolf",
+        "vendor_code": "424",
+        "description": "The iconic duo from 'Nu, Pogodi!' — endless chase, endless fun.",
+        "universe": "Nu, Pogodi!",
+        "owner": "Various",
+        "pets": "None",
+        "price": "400",
+        "img": "photos4/Hareandwolf.jpg"
+    },
+    {
+        "id": "25",
+        "title": "Timon and Pumbaa",
+        "vendor_code": "425",
+        "description": "A meerkat and a warthog — the funniest duo in the savanna. Hakuna Matata!",
+        "universe": "Disney (The Lion King)",
+        "owner": "Simba",
+        "pets": "None",
+        "price": "450",
+        "img": "photos4/Timonandpumbaa.jpg"
+    },
+    {
+        "id": "26",
+        "title": "SpongeBob and Patrick",
+        "vendor_code": "426",
+        "description": "Two best friends from Bikini Bottom who always find trouble together.",
+        "universe": "SpongeBob SquarePants",
+        "owner": "None",
+        "pets": "None",
+        "price": "380",
+        "img": "photos4/Spongebobandpatrick.jpg"
+    },
+    {
+        "id": "27",
+        "title": "Tom and Jerry",
+        "vendor_code": "427",
+        "description": "The legendary cat-and-mouse duo — rivals for life, friends at heart.",
+        "universe": "Tom and Jerry",
+        "owner": "None",
+        "pets": "None",
+        "price": "500",
+        "img": "photos4/Tomandjerry.jpg"
+    },
+    {
+        "id": "28",
+        "title": "Carnivorous Plant",
+        "vendor_code": "428",
+        "description": "A hungry little plant with sharp teeth and a big appetite.",
+        "universe": "Original",
+        "owner": "None",
+        "pets": "None",
+        "price": "180",
+        "img": "photos4/Carnivorousplant.jpg"
+    },
+    {
+        "id": "29",
+        "title": "Vinicius the Black Cat",
+        "vendor_code": "429",
+        "description": "A mysterious black cat with bright eyes and a lot of luck.",
+        "universe": "Original",
+        "owner": "Catherine",
+        "pets": "None",
+        "price": "150",
+        "img": "photos4/Viniciuscat.jpg"
+    },
+    {
+        "id": "30",
+        "title": "Twinkle",
+        "vendor_code": "430",
+        "description": "A tiny glowing spark of light, warm and gentle.",
+        "universe": "Original",
+        "owner": "None",
+        "pets": "None",
+        "price": "130",
+        "img": "photos4/Twinkle.jpg"
+    },
+    {
+        "id": "31",
+        "title": "Elmo",
+        "vendor_code": "431",
+        "description": "A cheerful red furry monster who loves hugs and learning.",
+        "universe": "Sesame Street",
+        "owner": "None",
+        "pets": "None",
+        "price": "200",
+        "img": "photos4/Elmo.jpg"
+    },
+    {
+        "id": "32",
+        "title": "Korzhik",
+        "vendor_code": "432",
+        "description": "A sweet and playful kitten from 'Three Cats', always ready for fun.",
+        "universe": "Three Cats",
+        "owner": "None",
+        "pets": "None",
+        "price": "110",
+        "img": "photos4/Korzhik.jpg"
+    },
+    {
+        "id": "33",
+        "title": "Kermit",
+        "vendor_code": "433",
+        "description": "A charming green frog from Sesame Street with a kind heart.",
+        "universe": "Sesame Street",
+        "owner": "None",
+        "pets": "None",
+        "price": "180",
+        "img": "photos4/Kermit.jpg"
+    },
+    {
+        "id": "34",
+        "title": "Bumblebee",
+        "vendor_code": "434",
+        "description": "A brave Autobot scout who transforms into a yellow car.",
+        "universe": "Transformers",
+        "owner": "Sam Witwicky",
+        "pets": "None",
+        "price": "400",
+        "img": "photos4/Bumblebee.jpg"
+    },
+    {
+        "id": "35",
+        "title": "Optimus Prime",
+        "vendor_code": "435",
+        "description": "The wise and powerful leader of the Autobots.",
+        "universe": "Transformers",
+        "owner": "None",
+        "pets": "None",
+        "price": "500",
+        "img": "photos4/Optimusprime.jpg"
+    },
+    {
+        "id": "36",
+        "title": "Toothless",
+        "vendor_code": "436",
+        "description": "A rare Night Fury dragon with a loyal heart and a playful spirit.",
+        "universe": "How to Train Your Dragon",
+        "owner": "Hiccup",
+        "pets": "None",
+        "price": "480",
+        "img": "photos4/Toothless.jpg"
     }
 ]
