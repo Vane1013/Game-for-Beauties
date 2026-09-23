@@ -606,14 +606,14 @@
     },
     {
         "id": "56",
-        "title": "Winnie-the-Pooh",
+        "title": "Frodo Baggins",
         "vendor_code": "256",
-        "description": "A kind and honey-loving bear from the Hundred Acre Wood.",
-        "universe": "Winnie-the-Pooh",
+        "description": "A kind hobbit who helps to save the world and keep the valuable ring.",
+        "universe": "Lord of the Rings",
         "husband": "None",
         "pets": "None",
-        "price": "180",
-        "img": "photos/Winnie.jpg"
+        "price": "150",
+        "img": "photos/Frodo.jpg"
     },
     {
         "id": "57",
