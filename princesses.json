@@ -628,14 +628,14 @@
     },
     {
         "id": "58",
-        "title": "Dory",
+        "title": "Gazelle",
         "vendor_code": "158",
         "description": "A forgetful but endlessly kind blue fish who helps Nemo's father.",
-        "universe": "Disney (Finding Nemo)",
+        "universe": "Zootopia",
         "husband": "None",
         "pets": "None",
         "price": "220",
-        "img": "photos/Dory.jpg"
+        "img": "photos/Gazelle.jpg"
     },
     {
         "id": "59",
