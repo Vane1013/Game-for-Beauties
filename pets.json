@@ -438,5 +438,27 @@
         "pets": "None",
         "price": "480",
         "img": "photos4/Whitefury.jpg"
+    },
+    {
+        "id": "41",
+        "title": "Marlin",
+        "vendor_code": "441",
+        "description": "An overprotective clownfish father on a mission to find his son.",
+        "universe": "Disney (Finding Nemo)",
+        "owner": "Coral",
+        "pets": "None",
+        "price": "250",
+        "img": "photos4/Marlin.jpg"
+    },
+    {
+        "id": "42",
+        "title": "Dory",
+        "vendor_code": "442",
+        "description": "A sweet blue fish that always wants to help but often forgets everything.",
+        "universe": "Disney (Finding Nemo)",
+        "owner": "None",
+        "pets": "None",
+        "price": "270",
+        "img": "photos4/Dory.jpg"
     }
 ]
