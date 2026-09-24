@@ -636,16 +636,5 @@
         "pets": "None",
         "price": "5",
         "img": "photos2/Scar.jpg"
-    },
-    {
-        "id": "59",
-        "title": "Marlin",
-        "vendor_code": "259",
-        "description": "An overprotective clownfish father on a mission to find his son.",
-        "universe": "Disney (Finding Nemo)",
-        "husband": "Coral",
-        "pets": "None",
-        "price": "250",
-        "img": "photos2/Marlin.jpg"
     }
 ]
