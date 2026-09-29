@@ -238,6 +238,60 @@
             .empty-section { padding: 30px 20px; }
             .empty-icon { font-size: 3rem; }
         }
+        /* ——— КУПЛЕННАЯ КАРТОЧКА (золотая рамка) ——— */
+.purchased-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(212, 176, 217, 0.35);
+    box-shadow: 0 10px 30px -10px rgba(150, 100, 170, 0.2);
+    position: relative;
+}
+
+.purchased-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, #f5c542, #d4b0d9, #f5c542);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.purchased-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px -12px rgba(150, 100, 170, 0.3);
+}
+
+.purchased-card:hover::before {
+    opacity: 1;
+}
+
+/* ——— БЕЙДЖ "КУПЛЕНО" ——— */
+.purchased-badge {
+    background: linear-gradient(135deg, #f5c542, #e0a82e);
+    color: #4a2c5e;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(245, 197, 66, 0.5);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* ——— КНОПКА "В КОЛЛЕКЦИИ" ——— */
+.purchased-card .btn-buy:disabled {
+    background: linear-gradient(135deg, #a8d9b8, #7bbf8f);
+    color: white;
+    opacity: 1;
+    cursor: default;
+    font-weight: 600;
+}
     </style>
 </head>
 
@@ -327,7 +381,7 @@
                             <p class="mb-0">Current stars and collection statistics</p>
                         </div>
                         <div class="col-md-4 text-end">
-                            <div class="h1 mb-0">⭐ 190</div>
+                            <div class="h1 mb-0">⭐ 7</div>
                             <small>Available Stars</small>
                         </div>
                     </div>
@@ -338,7 +392,7 @@
                     <div class="col-md-3 col-6 mb-3">
                         <div class="card stats-card text-center h-100">
                             <div class="card-body">
-                                <h3 class="text-primary">0</h3>
+                                <h3 class="text-primary">1</h3>
                                 <p class="text-muted mb-0">
                                     <i class="fas fa-crown me-1"></i>Princesses
                                 </p>
@@ -384,21 +438,66 @@
                 </h5>
 
                 <!-- ОТСЕК 1: ПРИНЦЕССЫ -->
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <h3 class="position-title">
-                            <i class="fas fa-crown me-2" style="color:#8a9fe0;"></i>My Princesses
-                        </h3>
+<div class="row mt-4">
+    <div class="col-12">
+        <h3 class="position-title">
+            <i class="fas fa-crown me-2" style="color:#8a9fe0;"></i>My Princesses
+        </h3>
+    </div>
+</div>
+<div class="row" id="zlatas_princesses">
+
+    <!-- ===== Карточка Малефисенты ===== -->
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
+        <div class="princess-card purchased-card h-100 d-flex flex-column">
+            <div class="card-img-container position-relative">
+                <img class="card-img-top responsive-img"
+                     src="photos/maleficent.jpg"
+                     alt="Maleficent"
+                     onerror="this.src='photos/placeholder.jpg'">
+                <!-- Бейдж "Куплено" -->
+                <div class="position-absolute top-0 end-0 m-2">
+                    <span class="purchased-badge">
+                        <i class="fas fa-check-circle me-1"></i>Purchased
+                    </span>
+                </div>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Maleficent</h5>
+                <div class="player-info mb-2">
+                    <small class="text-muted d-block">
+                        <i class="fas fa-globe me-1"></i> Disney
+                    </small>
+                    <small class="text-muted d-block">
+                        <i class="fas fa-heart me-1"></i> None
+                    </small>
+                    <small class="text-muted d-block">
+                        <i class="fas fa-paw me-1"></i> Diaval
+                    </small>
+                </div>
+                <p class="card-text flex-grow-1 small">The powerful queen of the murky swamps.</p>
+
+                <div class="price-section mb-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge-star">
+                            <i class="fas fa-star" style="color:#f5c542;"></i> 200
+                        </span>
+                        <span class="text-muted small">Paid</span>
                     </div>
                 </div>
-                <div class="row" id="zlatas_princesses">
-                    <div class="col-12">
-                        <div class="empty-section">
-                            <div class="empty-icon"><i class="fas fa-crown"></i></div>
-                            <p>Your princesses will appear here. Buy them on the Princesses page!</p>
-                        </div>
-                    </div>
+
+                <div class="mt-auto">
+                    <button class="btn btn-buy w-100" disabled>
+                        <i class="fas fa-check me-2"></i>In Your Collection
+                    </button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Сюда можно добавлять ещё купленных принцесс по такому же шаблону -->
+
+</div>
 
                 <!-- ОТСЕК 2: ПРИНЦЫ -->
                 <div class="row mt-5">
