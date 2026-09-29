@@ -238,59 +238,153 @@
             .empty-section { padding: 30px 20px; }
             .empty-icon { font-size: 3rem; }
         }
-        /* ——— КУПЛЕННАЯ КАРТОЧКА (золотая рамка) ——— */
+        /* ——— БАЗОВЫЙ СТИЛЬ КАРТОЧКИ ПРИНЦЕССЫ ——— */
+.princess-card {
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden; /* Чтобы картинка не вылезала за скругления */
+}
+
+/* ——— КУПЛЕННАЯ КАРТОЧКА (золотая переливающаяся рамка) ——— */
 .purchased-card {
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid rgba(212, 176, 217, 0.35);
-    box-shadow: 0 10px 30px -10px rgba(150, 100, 170, 0.2);
+    box-shadow: 0 10px 30px -5px rgba(150, 100, 170, 0.2), inset 0 0 0 1px rgba(245, 197, 66, 0.3);
     position: relative;
+    z-index: 1;
 }
 
 .purchased-card::before {
     content: "";
     position: absolute;
-    inset: -1px;
+    inset: 0;
     border-radius: 24px;
-    padding: 2px;
-    background: linear-gradient(135deg, #f5c542, #d4b0d9, #f5c542);
+    padding: 3px; /* Толщина золотой рамки */
+    background: linear-gradient(135deg, #f5c542, #d4b0d9, #fff0aa, #e0a82e, #f5c542);
+    background-size: 300% 300%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
-    opacity: 0.7;
+    opacity: 0.9;
+    animation: shimmerGold 4s ease infinite; /* Анимация переливания */
+}
+
+@keyframes shimmerGold {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .purchased-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px -12px rgba(150, 100, 170, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(150, 100, 170, 0.4);
 }
 
-.purchased-card:hover::before {
-    opacity: 1;
+/* ——— ИЗОБРАЖЕНИЕ И ЭФФЕКТ ПРИ НАВЕДЕНИИ ——— */
+.card-img-container {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(245, 197, 66, 0.3);
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 240px; /* Фиксируем высоту, чтобы все карты были ровными */
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.purchased-card:hover .card-img-container img {
+    transform: scale(1.08); /* Плавный зум картинки при наведении */
+}
+
+/* Легкое затемнение сверху картинки, чтобы бейдж лучше читался */
+.card-img-overlay-grad {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(74, 44, 94, 0.4) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 /* ——— БЕЙДЖ "КУПЛЕНО" ——— */
 .purchased-badge {
-    background: linear-gradient(135deg, #f5c542, #e0a82e);
-    color: #4a2c5e;
-    font-weight: 700;
-    font-size: 0.7rem;
-    padding: 5px 12px;
+    background: linear-gradient(135deg, #f5c542 0%, #ffdf73 50%, #e0a82e 100%);
+    color: #3a1f4a;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 6px 14px;
     border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(245, 197, 66, 0.5);
-    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(245, 197, 66, 0.6), inset 0 1px 1px rgba(255,255,255,0.8);
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
+    border: 1px solid rgba(255,255,255,0.5);
+    z-index: 2;
+}
+
+/* ——— ТЕГИ ХАРАКТЕРИСТИК (Вместо простого текста) ——— */
+.player-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.player-info small {
+    background: rgba(212, 176, 217, 0.2);
+    color: #5a3d6b;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(212, 176, 217, 0.4);
+    transition: all 0.2s;
+}
+
+.player-info small:hover {
+    background: rgba(212, 176, 217, 0.4);
+}
+
+.player-info small i {
+    color: #8a9fe0;
+}
+
+/* ——— СЕКЦИЯ С ЦЕНОЙ ——— */
+.price-section {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    padding: 10px 15px;
+    border: 1px dashed rgba(212, 176, 217, 0.8);
+    margin-bottom: 15px !important;
+}
+
+.badge-star {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #4a2c5e;
+}
+
+.badge-star i {
+    filter: drop-shadow(0 0 5px rgba(245, 197, 66, 0.9)); /* Светящаяся звездочка */
 }
 
 /* ——— КНОПКА "В КОЛЛЕКЦИИ" ——— */
 .purchased-card .btn-buy:disabled {
-    background: linear-gradient(135deg, #a8d9b8, #7bbf8f);
+    background: linear-gradient(135deg, #78d19a, #4eab70);
     color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 12px;
     opacity: 1;
     cursor: default;
     font-weight: 600;
+    box-shadow: 0 6px 15px rgba(78, 171, 112, 0.3), inset 0 1px 1px rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
 }
     </style>
 </head>
@@ -450,39 +544,49 @@
     <!-- ===== Карточка Малефисенты ===== -->
     <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
         <div class="princess-card purchased-card h-100 d-flex flex-column">
-            <div class="card-img-container position-relative">
+            
+            <div class="card-img-container">
                 <img class="card-img-top responsive-img"
                      src="photos/maleficent.jpg"
                      alt="Maleficent"
                      onerror="this.src='photos/placeholder.jpg'">
+                <div class="card-img-overlay-grad"></div> <!-- Затемнение сверху -->
+                
                 <!-- Бейдж "Куплено" -->
-                <div class="position-absolute top-0 end-0 m-2">
+                <div class="position-absolute top-0 end-0 m-3">
                     <span class="purchased-badge">
                         <i class="fas fa-check-circle me-1"></i>Purchased
                     </span>
                 </div>
             </div>
-            <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Maleficent</h5>
-                <div class="player-info mb-2">
-                    <small class="text-muted d-block">
+
+            <div class="card-body d-flex flex-column p-4">
+                <h4 class="card-title" style="color: #4a2c5e; font-weight: 700;">Maleficent</h4>
+                
+                <!-- Красивые теги -->
+                <div class="player-info">
+                    <small>
                         <i class="fas fa-globe me-1"></i> Disney
                     </small>
-                    <small class="text-muted d-block">
+                    <small>
                         <i class="fas fa-heart me-1"></i> None
                     </small>
-                    <small class="text-muted d-block">
+                    <small>
                         <i class="fas fa-paw me-1"></i> Diaval
                     </small>
                 </div>
-                <p class="card-text flex-grow-1 small">The powerful queen of the murky swamps.</p>
+                
+                <p class="card-text flex-grow-1" style="color: #665073; font-size: 0.95rem;">
+                    The powerful queen of the murky swamps.
+                </p>
 
-                <div class="price-section mb-2">
+                <!-- Секция цены -->
+                <div class="price-section mt-2 mb-3">
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="badge-star">
-                            <i class="fas fa-star" style="color:#f5c542;"></i> 200
+                            <i class="fas fa-star me-1" style="color:#f5c542;"></i> 200
                         </span>
-                        <span class="text-muted small">Paid</span>
+                        <span class="text-muted small fw-bold" style="color: #a891b3 !important;">PAID</span>
                     </div>
                 </div>
 
@@ -492,6 +596,7 @@
                     </button>
                 </div>
             </div>
+            
         </div>
     </div>
 
