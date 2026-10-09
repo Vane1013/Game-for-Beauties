@@ -238,29 +238,36 @@
             .empty-section { padding: 30px 20px; }
             .empty-icon { font-size: 3rem; }
         }
-        /* ——— БАЗОВЫЙ СТИЛЬ КАРТОЧКИ ПРИНЦЕССЫ ——— */
-.princess-card {
+        /* ============================================================
+   УНИВЕРСАЛЬНАЯ КАРТОЧКА КОЛЛЕКЦИИ
+   Работает для принцесс, принцев, замков и питомцев
+   ============================================================ */
+
+.collection-card {
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     border: none;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    overflow: hidden; /* Чтобы картинка не вылезала за скругления */
+    box-shadow: 0 10px 30px -5px rgba(150, 100, 170, 0.2);
 }
 
-/* ——— КУПЛЕННАЯ КАРТОЧКА (золотая переливающаяся рамка) ——— */
-.purchased-card {
-    box-shadow: 0 10px 30px -5px rgba(150, 100, 170, 0.2), inset 0 0 0 1px rgba(245, 197, 66, 0.3);
+/* ——— Золотая переливающаяся рамка для купленного ——— */
+.collection-card.purchased {
     position: relative;
     z-index: 1;
 }
 
-.purchased-card::before {
+.collection-card.purchased::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 24px;
-    padding: 3px; /* Толщина золотой рамки */
+    padding: 3px;
     background: linear-gradient(135deg, #f5c542, #d4b0d9, #fff0aa, #e0a82e, #f5c542);
     background-size: 300% 300%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -268,7 +275,7 @@
     mask-composite: exclude;
     pointer-events: none;
     opacity: 0.9;
-    animation: shimmerGold 4s ease infinite; /* Анимация переливания */
+    animation: shimmerGold 4s ease infinite;
 }
 
 @keyframes shimmerGold {
@@ -277,30 +284,38 @@
     100% { background-position: 0% 50%; }
 }
 
-.purchased-card:hover {
-    transform: translateY(-8px);
+.collection-card:hover {
+    transform: translateY(-6px);
     box-shadow: 0 20px 40px -10px rgba(150, 100, 170, 0.4);
 }
 
-/* ——— ИЗОБРАЖЕНИЕ И ЭФФЕКТ ПРИ НАВЕДЕНИИ ——— */
-.card-img-container {
+/* ——— КОНТЕЙНЕР ДЛЯ ФОТО ——— */
+.collection-card .card-img-container {
     position: relative;
     overflow: hidden;
     border-bottom: 2px solid rgba(245, 197, 66, 0.3);
+    background: rgba(212, 176, 217, 0.08);
 }
 
-.card-img-container img {
+.collection-card .card-img-container img {
     width: 100%;
-    height: 240px; /* Фиксируем высоту, чтобы все карты были ровными */
+    height: 220px;
     object-fit: cover;
+    display: block;
     transition: transform 0.6s ease;
 }
 
-.purchased-card:hover .card-img-container img {
-    transform: scale(1.08); /* Плавный зум картинки при наведении */
+/* Для карточек с object-fit: contain (например, принцессы/принцы на белом фоне) */
+.collection-card .card-img-container.contain-mode img {
+    object-fit: contain;
+    padding: 12px;
+    background: linear-gradient(145deg, #faf5ff, #f0e8f5);
 }
 
-/* Легкое затемнение сверху картинки, чтобы бейдж лучше читался */
+.collection-card:hover .card-img-container img {
+    transform: scale(1.08);
+}
+
 .card-img-overlay-grad {
     position: absolute;
     inset: 0;
@@ -308,83 +323,159 @@
     pointer-events: none;
 }
 
-/* ——— БЕЙДЖ "КУПЛЕНО" ——— */
+/* ——— БЕЙДЖ «КУПЛЕНО» ——— */
 .purchased-badge {
     background: linear-gradient(135deg, #f5c542 0%, #ffdf73 50%, #e0a82e 100%);
     color: #3a1f4a;
     font-weight: 800;
-    font-size: 0.75rem;
-    padding: 6px 14px;
+    font-size: 0.7rem;
+    padding: 5px 12px;
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(245, 197, 66, 0.6), inset 0 1px 1px rgba(255,255,255,0.8);
+    box-shadow: 0 4px 15px rgba(245, 197, 66, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.8);
     letter-spacing: 0.8px;
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     z-index: 2;
 }
 
-/* ——— ТЕГИ ХАРАКТЕРИСТИК (Вместо простого текста) ——— */
-.player-info {
+/* ——— ТЕЛО КАРТОЧКИ ——— */
+.collection-card .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* ——— ЗАГОЛОВОК ——— */
+.collection-card .card-title {
+    color: #4a2c5e;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* ——— ТЕГИ (универсальные) ——— */
+.collection-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     margin-bottom: 12px;
 }
 
-.player-info small {
+.collection-tags small {
     background: rgba(212, 176, 217, 0.2);
     color: #5a3d6b;
     padding: 5px 10px;
     border-radius: 12px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     border: 1px solid rgba(212, 176, 217, 0.4);
     transition: all 0.2s;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.player-info small:hover {
+.collection-tags small:hover {
     background: rgba(212, 176, 217, 0.4);
 }
 
-.player-info small i {
+.collection-tags small i {
     color: #8a9fe0;
+    margin-right: 4px;
+    flex-shrink: 0;
 }
 
-/* ——— СЕКЦИЯ С ЦЕНОЙ ——— */
-.price-section {
+/* Цветовые вариации тегов */
+.collection-tags small.tag-princess i { color: #d47b9e; }
+.collection-tags small.tag-prince i { color: #8a9fe0; }
+.collection-tags small.tag-castle i { color: #b58bc4; }
+.collection-tags small.tag-pet i { color: #f5a623; }
+
+/* ——— ОПИСАНИЕ ——— */
+.collection-card .card-text {
+    color: #665073;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    flex-grow: 1;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ——— СЕКЦИЯ ЦЕНЫ ——— */
+.collection-card .price-section {
     background: rgba(255, 255, 255, 0.6);
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 10px 15px;
     border: 1px dashed rgba(212, 176, 217, 0.8);
-    margin-bottom: 15px !important;
+    margin-bottom: 12px;
 }
 
-.badge-star {
-    font-size: 1.1rem;
+.collection-card .badge-star {
+    font-size: 1.05rem;
     font-weight: 700;
     color: #4a2c5e;
 }
 
-.badge-star i {
-    filter: drop-shadow(0 0 5px rgba(245, 197, 66, 0.9)); /* Светящаяся звездочка */
+.collection-card .badge-star i {
+    color: #f5c542;
+    filter: drop-shadow(0 0 5px rgba(245, 197, 66, 0.9));
+    margin-right: 4px;
 }
 
-/* ——— КНОПКА "В КОЛЛЕКЦИИ" ——— */
-.purchased-card .btn-buy:disabled {
+.collection-card .paid-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #a891b3;
+    text-transform: uppercase;
+}
+
+/* ——— КНОПКА «В КОЛЛЕКЦИИ» ——— */
+.collection-card .btn-collected {
     background: linear-gradient(135deg, #78d19a, #4eab70);
     color: white;
     border: none;
     border-radius: 14px;
-    padding: 12px;
+    padding: 11px;
     opacity: 1;
     cursor: default;
     font-weight: 600;
-    box-shadow: 0 6px 15px rgba(78, 171, 112, 0.3), inset 0 1px 1px rgba(255,255,255,0.4);
+    font-size: 0.9rem;
+    box-shadow: 0 6px 15px rgba(78, 171, 112, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.4);
     letter-spacing: 0.5px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.collection-card .btn-collected:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(78, 171, 112, 0.5);
+}
+
+/* Кнопки по типам (разные надписи и оттенки) */
+.collection-card .btn-collected.btn-princess { background: linear-gradient(135deg, #f0b8cc, #d47b9e); }
+.collection-card .btn-collected.btn-prince { background: linear-gradient(135deg, #a8b8e8, #7b8fd4); }
+.collection-card .btn-collected.btn-castle { background: linear-gradient(135deg, #c5a8d9, #9b78b8); }
+.collection-card .btn-collected.btn-pet { background: linear-gradient(135deg, #f5c542, #e0a82e); color: #4a2c5e; }
+
+/* ——— АДАПТИВ ——— */
+@media (max-width: 768px) {
+    .collection-card .card-img-container img {
+        height: 180px;
+    }
+    .collection-card .card-body {
+        padding: 16px;
+    }
 }
     </style>
 </head>
@@ -540,68 +631,37 @@
     </div>
 </div>
 <div class="row" id="zlatas_princesses">
-
-    <!-- ===== Карточка Малефисенты ===== -->
     <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
-        <div class="princess-card purchased-card h-100 d-flex flex-column">
-            
-            <div class="card-img-container">
-                <img class="card-img-top responsive-img"
-                     src="photos/maleficent.jpg"
-                     alt="Maleficent"
-                     onerror="this.src='photos/placeholder.jpg'">
-                <div class="card-img-overlay-grad"></div> <!-- Затемнение сверху -->
-                
-                <!-- Бейдж "Куплено" -->
+        <div class="collection-card purchased">
+            <div class="card-img-container contain-mode">
+                <img src="photos/maleficent.jpg" alt="Maleficent" onerror="this.src='photos/placeholder.jpg'">
+                <div class="card-img-overlay-grad"></div>
                 <div class="position-absolute top-0 end-0 m-3">
                     <span class="purchased-badge">
                         <i class="fas fa-check-circle me-1"></i>Purchased
                     </span>
                 </div>
             </div>
-
-            <div class="card-body d-flex flex-column p-4">
-                <h4 class="card-title" style="color: #4a2c5e; font-weight: 700;">Maleficent</h4>
-                
-                <!-- Красивые теги -->
-                <div class="player-info">
-                    <small>
-                        <i class="fas fa-globe me-1"></i> Disney
-                    </small>
-                    <small>
-                        <i class="fas fa-heart me-1"></i> None
-                    </small>
-                    <small>
-                        <i class="fas fa-paw me-1"></i> Diaval
-                    </small>
+            <div class="card-body">
+                <h4 class="card-title">Maleficent</h4>
+                <div class="collection-tags">
+                    <small class="tag-princess"><i class="fas fa-globe"></i> Disney</small>
+                    <small class="tag-princess"><i class="fas fa-heart"></i> None</small>
+                    <small class="tag-princess"><i class="fas fa-paw"></i> Diaval</small>
                 </div>
-                
-                <p class="card-text flex-grow-1" style="color: #665073; font-size: 0.95rem;">
-                    The powerful queen of the murky swamps.
-                </p>
-
-                <!-- Секция цены -->
-                <div class="price-section mt-2 mb-3">
+                <p class="card-text">The powerful queen of the murky swamps.</p>
+                <div class="price-section">
                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="badge-star">
-                            <i class="fas fa-star me-1" style="color:#f5c542;"></i> 200
-                        </span>
-                        <span class="text-muted small fw-bold" style="color: #a891b3 !important;">PAID</span>
+                        <span class="badge-star"><i class="fas fa-star"></i> 200</span>
+                        <span class="paid-label">Paid</span>
                     </div>
                 </div>
-
-                <div class="mt-auto">
-                    <button class="btn btn-buy w-100" disabled>
-                        <i class="fas fa-check me-2"></i>In Your Collection
-                    </button>
-                </div>
+                <button class="btn-collected btn-princess">
+                    <i class="fas fa-check me-2"></i>In Your Collection
+                </button>
             </div>
-            
         </div>
     </div>
-
-    <!-- Сюда можно добавлять ещё купленных принцесс по такому же шаблону -->
-
 </div>
 
                 <!-- ОТСЕК 2: ПРИНЦЫ -->
@@ -613,67 +673,37 @@
                     </div>
                 </div>
                 <div class="row" id="zlatas_princes">
-                     <!-- ===== Карточка Дзяваля ===== -->
     <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
-        <div class="princess-card purchased-card h-100 d-flex flex-column">
-            
-            <div class="card-img-container">
-                <img class="card-img-top responsive-img"
-                     src="photos2/diaval.jpg"
-                     alt="Diaval"
-                     onerror="this.src='photos2/placeholder.jpg'">
-                <div class="card-img-overlay-grad"></div> <!-- Затемнение сверху -->
-                
-                <!-- Бейдж "Куплено" -->
+        <div class="collection-card purchased">
+            <div class="card-img-container contain-mode">
+                <img src="photos2/diaval.jpg" alt="Diaval" onerror="this.src='photos2/placeholder.jpg'">
+                <div class="card-img-overlay-grad"></div>
                 <div class="position-absolute top-0 end-0 m-3">
                     <span class="purchased-badge">
                         <i class="fas fa-check-circle me-1"></i>Purchased
                     </span>
                 </div>
             </div>
-
-            <div class="card-body d-flex flex-column p-4">
-                <h4 class="card-title" style="color: #4a2c5e; font-weight: 700;">Diaval</h4>
-                
-                <!-- Красивые теги -->
-                <div class="player-info">
-                    <small>
-                        <i class="fas fa-globe me-1"></i> Disney
-                    </small>
-                    <small>
-                        <i class="fas fa-heart me-1"></i> None
-                    </small>
-                    <small>
-                        <i class="fas fa-paw me-1"></i> None
-                    </small>
+            <div class="card-body">
+                <h4 class="card-title">Diaval</h4>
+                <div class="collection-tags">
+                    <small class="tag-prince"><i class="fas fa-globe"></i> Disney</small>
+                    <small class="tag-prince"><i class="fas fa-heart"></i> None</small>
+                    <small class="tag-prince"><i class="fas fa-paw"></i> None</small>
                 </div>
-                
-                <p class="card-text flex-grow-1" style="color: #665073; font-size: 0.95rem;">
-                    A powerful crow-prince and the servant of Maleficent.
-                </p>
-
-                <!-- Секция цены -->
-                <div class="price-section mt-2 mb-3">
+                <p class="card-text">A powerful crow-prince and the servant of Maleficent.</p>
+                <div class="price-section">
                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="badge-star">
-                            <i class="fas fa-star me-1" style="color:#f5c542;"></i> 150
-                        </span>
-                        <span class="text-muted small fw-bold" style="color: #a891b3 !important;">PAID</span>
+                        <span class="badge-star"><i class="fas fa-star"></i> 150</span>
+                        <span class="paid-label">Paid</span>
                     </div>
                 </div>
-
-                <div class="mt-auto">
-                    <button class="btn btn-buy w-100" disabled>
-                        <i class="fas fa-check me-2"></i>In Your Collection
-                    </button>
-                </div>
+                <button class="btn-collected btn-prince">
+                    <i class="fas fa-check me-2"></i>In Your Collection
+                </button>
             </div>
-            
         </div>
     </div>
-
-    <!-- Сюда можно добавлять ещё купленных принцесс по такому же шаблону -->
-
 </div>
 
                 <!-- ОТСЕК 3: ЗАМКИ -->
