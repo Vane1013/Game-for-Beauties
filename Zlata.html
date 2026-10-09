@@ -475,7 +475,7 @@
                             <p class="mb-0">Current stars and collection statistics</p>
                         </div>
                         <div class="col-md-4 text-end">
-                            <div class="h1 mb-0">⭐ 105</div>
+                            <div class="h1 mb-0">⭐ 3</div>
                             <small>Available Stars</small>
                         </div>
                     </div>
@@ -613,13 +613,68 @@
                     </div>
                 </div>
                 <div class="row" id="zlatas_princes">
-                    <div class="col-12">
-                        <div class="empty-section">
-                            <div class="empty-icon"><i class="fas fa-chess-king"></i></div>
-                            <p>Your princes will appear here. Find them on the Princes page!</p>
-                        </div>
+                     <!-- ===== Карточка Дзяваля ===== -->
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
+        <div class="princess-card purchased-card h-100 d-flex flex-column">
+            
+            <div class="card-img-container">
+                <img class="card-img-top responsive-img"
+                     src="photos/diaval.jpg"
+                     alt="Diaval"
+                     onerror="this.src='photos/placeholder.jpg'">
+                <div class="card-img-overlay-grad"></div> <!-- Затемнение сверху -->
+                
+                <!-- Бейдж "Куплено" -->
+                <div class="position-absolute top-0 end-0 m-3">
+                    <span class="purchased-badge">
+                        <i class="fas fa-check-circle me-1"></i>Purchased
+                    </span>
+                </div>
+            </div>
+
+            <div class="card-body d-flex flex-column p-4">
+                <h4 class="card-title" style="color: #4a2c5e; font-weight: 700;">Diaval</h4>
+                
+                <!-- Красивые теги -->
+                <div class="player-info">
+                    <small>
+                        <i class="fas fa-globe me-1"></i> Disney
+                    </small>
+                    <small>
+                        <i class="fas fa-heart me-1"></i> None
+                    </small>
+                    <small>
+                        <i class="fas fa-paw me-1"></i> None
+                    </small>
+                </div>
+                
+                <p class="card-text flex-grow-1" style="color: #665073; font-size: 0.95rem;">
+                    A powerful crow-prince and the servant of Maleficent.
+                </p>
+
+                <!-- Секция цены -->
+                <div class="price-section mt-2 mb-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge-star">
+                            <i class="fas fa-star me-1" style="color:#f5c542;"></i> 150
+                        </span>
+                        <span class="text-muted small fw-bold" style="color: #a891b3 !important;">PAID</span>
                     </div>
                 </div>
+
+                <div class="mt-auto">
+                    <button class="btn btn-buy w-100" disabled>
+                        <i class="fas fa-check me-2"></i>In Your Collection
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Сюда можно добавлять ещё купленных принцесс по такому же шаблону -->
+
+</div>
 
                 <!-- ОТСЕК 3: ЗАМКИ -->
                 <div class="row mt-5">
