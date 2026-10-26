@@ -238,5 +238,15 @@
         "type": "Swamp fortress",
         "price": "660",
         "img": "photos3/Swamp.jpg"
+    },
+    {
+        "id": "25",
+        "title": "Abandoned Hut",
+        "vendor_code": "325",
+        "description": "An old abandoned hut. Nobody wants to live here, but if you buy it, you will get a second castle that you wish for free!",
+        "universe": "Fantasy",
+        "type": "Swamp fortress",
+        "price": "1",
+        "img": "photos3/Abandoned.jpg"
     }
 ]
