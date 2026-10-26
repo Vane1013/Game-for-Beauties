@@ -647,5 +647,16 @@
         "pets": "None",
         "price": "100",
         "img": "photos/Dora.jpg"
+    },
+    {
+        "id": "60",
+        "title": "Darla",
+        "vendor_code": "160",
+        "description": "A very clumsy and ill-mannered girl. However, if you adopt her and let her live in your world, she will be grateful and she will bring you some of her friends (=any princess that you wish)!",
+        "universe": "Finding Nemo",
+        "husband": "None",
+        "pets": "Fish",
+        "price": "1",
+        "img": "photos/Darla.jpg"
     }
 ]
