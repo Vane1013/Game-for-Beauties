@@ -460,5 +460,16 @@
         "pets": "None",
         "price": "270",
         "img": "photos4/Dory.jpg"
+    },
+    {
+        "id": "43",
+        "title": "Vupsen and Pupsen",
+        "vendor_code": "443",
+        "description": "Two terrible caterpillar brothers, who usually do bad things. However, if you decide to educate and feeding them well, they will show their gratitude by gifting you one of the pets that you want!",
+        "universe": "Luntik",
+        "owner": "None",
+        "pets": "None",
+        "price": "1",
+        "img": "photos4/Vupsenpupsen.jpg"
     }
 ]
