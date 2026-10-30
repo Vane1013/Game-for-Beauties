@@ -566,7 +566,7 @@
                             <p class="mb-0">Current stars and collection statistics</p>
                         </div>
                         <div class="col-md-4 text-end">
-                            <div class="h1 mb-0">⭐ 312</div>
+                            <div class="h1 mb-0">⭐ 361</div>
                             <small>Available Stars</small>
                         </div>
                     </div>
@@ -597,7 +597,7 @@
                     <div class="col-md-3 col-6 mb-3">
                         <div class="card stats-card text-center h-100">
                             <div class="card-body">
-                                <h3 class="text-info">0</h3>
+                                <h3 class="text-info">2</h3>
                                 <p class="text-muted mb-0">
                                     <i class="fas fa-landmark me-1"></i>Castles
                                 </p>
@@ -706,22 +706,83 @@
     </div>
 </div>
 
-                <!-- ОТСЕК 3: ЗАМКИ -->
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <h3 class="position-title">
-                            <i class="fas fa-landmark me-2" style="color:#b58bc4;"></i>My Castles
-                        </h3>
+               <!-- ОТСЕК 3: ЗАМКИ -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h3 class="position-title">
+            <i class="fas fa-landmark me-2" style="color:#b58bc4;"></i>My Castles
+        </h3>
+    </div>
+</div>
+<div class="row" id="zlatas_castles">
+
+    <!-- ===== Карточка темного замка ===== -->
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
+        <div class="collection-card purchased">
+            <div class="card-img-container">
+                <img src="photos3/Dark.jpg" alt="Dark Castle" onerror="this.src='photos3/placeholder.jpg'">
+                <div class="card-img-overlay-grad"></div>
+                <div class="position-absolute top-0 end-0 m-3">
+                    <span class="purchased-badge">
+                        <i class="fas fa-check-circle me-1"></i>Owned
+                    </span>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Dark Castle</h4>
+                <div class="collection-tags">
+                    <small class="tag-castle"><i class="fas fa-globe"></i> Fantasy</small>
+                    <small class="tag-castle"><i class="fas fa-landmark"></i> Dark</small>
+                </div>
+                <p class="card-text">A shadowy fortress hiding ancient secrets and dark secrets.</p>
+                <div class="price-section">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge-star"><i class="fas fa-star"></i> 680</span>
+                        <span class="paid-label">Paid</span>
                     </div>
                 </div>
-                <div class="row" id="zoes_castles">
-                    <div class="col-12">
-                        <div class="empty-section">
-                            <div class="empty-icon"><i class="fas fa-landmark"></i></div>
-                            <p>Your castles will appear here. Choose them on the Castles page!</p>
-                        </div>
+                <button class="btn-collected btn-castle">
+                    <i class="fas fa-check me-2"></i>In Your Kingdom
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Карточка хижины ===== -->
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
+        <div class="collection-card purchased">
+            <div class="card-img-container">
+                <img src="photos3/Abandoned.jpg" alt="Abandoned Hut" onerror="this.src='photos3/placeholder.jpg'">
+                <div class="card-img-overlay-grad"></div>
+                <div class="position-absolute top-0 end-0 m-3">
+                    <span class="purchased-badge">
+                        <i class="fas fa-check-circle me-1"></i>Owned
+                    </span>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Abandoned Hut</h4>
+                <div class="collection-tags">
+                    <small class="tag-castle"><i class="fas fa-globe"></i> Fantasy</small>
+                    <small class="tag-castle"><i class="fas fa-landmark"></i> Swamp fortress</small>
+                </div>
+                <p class="card-text">An old abandoned hut. Nobody wants to live here, but if you buy it, you will get a second castle that you wish for free!</p>
+                <div class="price-section">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge-star"><i class="fas fa-star"></i> 1</span>
+                        <span class="paid-label">Paid</span>
                     </div>
                 </div>
+                <button class="btn-collected btn-castle">
+                    <i class="fas fa-check me-2"></i>In Your Kingdom
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Сюда можно добавлять другие купленные замки по такому же шаблону -->
+
+</div>
 
                 <!-- ОТСЕК 4: ПИТОМЦЫ -->
                 <div class="row mt-5">
